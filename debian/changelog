@@ -1,0 +1,17 @@
+ceilometer (0.1-0ubuntu1) quantal; urgency=low
+
+  * New upstream release.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 12 Oct 2012 09:34:05 -0500
+
+ceilometer (0~20121002-0ubuntu2) quantal; urgency=low
+
+  * Fix two typos in dependencies in debian/control (LP: #1063244)
+
+ -- Adam Conrad <adconrad@ubuntu.com>  Sun, 07 Oct 2012 07:49:55 -0600
+
+ceilometer (0~20121002-0ubuntu1) quantal; urgency=low
+
+  * Initial release.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 03 Oct 2012 13:00:29 -0500

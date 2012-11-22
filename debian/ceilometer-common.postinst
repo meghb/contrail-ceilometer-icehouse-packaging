@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" ]; then
+	if ! getenv group ceilometer > /dev/null 2>&1; then
+		addgroup --system ceilometer >/dev/null
+	fi
+
+	if ! getenv passwd ceilometer > /dev/null 2>&1; then
+		adduser --system --home /var/lib/ceilometer --ingroup ceilometer --no-create-home \
+			--shell /bin/false ceilometer
+	fi
+
+	chown -R ceilometer:adm /var/log/ceilometer
+	chmod 0750 /var/log/ceilometer
+	chown -R ceilometer:ceilometer /var/lib/ceilometer /etc/ceilometer
+fi
+#DEBHELPER#
