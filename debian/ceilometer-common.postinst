@@ -13,5 +13,10 @@ if [ "$1" = "configure" ]; then
 	chown -R ceilometer:adm /var/log/ceilometer
 	chmod 0750 /var/log/ceilometer
 	chown -R ceilometer:ceilometer /var/lib/ceilometer /etc/ceilometer
+
+	if ! grep -q sql_connection /etc/ceilometer/ceilometer.conf
+	then
+		su -s /bin/sh -c 'ceilometer-dbsync' ceilometer
+	fi
 fi
 #DEBHELPER#

@@ -1,1 +1,4 @@
 tools/show_data.py usr/share/doc/ceilometer
+etc/ceilometer/ceilometer.conf.sample etc/ceilometer/ceilometer.conf
+etc/ceilometer/policy.json etc/ceilometer
+etc/ceilometer/sources.json etc/ceilometer

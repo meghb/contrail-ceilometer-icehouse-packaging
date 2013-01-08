@@ -5,6 +5,10 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
   * debian/rules: Enable testsuite.
   * debian/control: Update dependencies.
   * debian/patches/remove-unwanted-dependencies.patch: Remove mongodb dependencies.
+  * debian/ceilometer-agent-compute.postinst: Add smarts to 
+    configure users after install.
+  * debian/ceilometer-common.postinst: Configure ceilometer db.
+  * debian/ceilometer-common.install: Install configuration files.
 
  -- Chuck Short <zulcss@ubuntu.com>  Tue, 08 Jan 2013 07:52:53 -0600
 
