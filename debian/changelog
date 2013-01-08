@@ -1,6 +1,7 @@
 ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release. 
+  * debian/watch: point to the right releases.
 
  -- Chuck Short <zulcss@ubuntu.com>  Tue, 08 Jan 2013 07:52:53 -0600
 
