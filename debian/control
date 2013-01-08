@@ -24,7 +24,14 @@ Build-Depends-Indep:
  python-nova,
  python-glance,
  python-setuptools-git,
- python-iso8601
+ python-iso8601,
+ python-sqlaclhemy,
+ python-glanceclient,
+ python-novaclient,
+ python-keystoneclient,
+ python-swiftclient,
+ python-lxml,
+ python-netifaces
 Standards-Version: 3.9.3
 
 Package: python-ceilometer
