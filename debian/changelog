@@ -9,6 +9,7 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
     configure users after install.
   * debian/ceilometer-common.postinst: Configure ceilometer db.
   * debian/ceilometer-common.install: Install configuration files.
+  * debian/*.usptart: Update and use start-stop-daemon.
 
  -- Chuck Short <zulcss@ubuntu.com>  Tue, 08 Jan 2013 07:52:53 -0600
 
