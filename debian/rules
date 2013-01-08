@@ -5,3 +5,6 @@
 
 %:
 	dh $@  --with python2
+
+get-orig-source:
+	ucsan --verbose --force-download --rename --destdir=../build-area
