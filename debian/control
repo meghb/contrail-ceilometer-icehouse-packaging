@@ -21,7 +21,6 @@ Build-Depends-Indep:
  python-mock,
  python-mox,
  python-glanceclient,
- python-nova,
  python-glance,
  python-setuptools-git,
  python-iso8601,
