@@ -1,10 +1,12 @@
 ceilometer (2013.1~g2~20130107.449-0ubuntu2) UNRELEASED; urgency=low
 
+  [ Yolanda Robla ]
   * d/patches: removed unused patches
   * d/rules: copying ceilometer.conf.sample to ceilometer.conf
   * d/ceilometer-common.install: fix copying ceilometer.conf
+  * d/control: removing python-nova dependencies
 
- -- Yolanda Robla <yolanda.robla@canonical.com>  Wed, 16 Jan 2013 18:12:53 +0100
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Wed, 28 Jan 2013 11:16:00 +0100
 
 ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
 
