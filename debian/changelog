@@ -5,8 +5,11 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu2) UNRELEASED; urgency=low
   * d/rules: copying ceilometer.conf.sample to ceilometer.conf
   * d/ceilometer-common.install: fix copying ceilometer.conf
   * d/control: removing python-nova dependencies
+  * d/control: added python-pecan, python-extras dependendies
+  * d/*.upstart: fixed upstart jobs
+  * d/pydist-overrides: correcting pymongo and wsme package names
 
- -- Yolanda Robla <yolanda.robla@canonical.com>  Wed, 28 Jan 2013 11:16:00 +0100
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Thu, 31 Jan 2013 16:28:00 +0100
 
 ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
 

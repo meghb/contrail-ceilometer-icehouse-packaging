@@ -30,7 +30,10 @@ Build-Depends-Indep:
  python-keystoneclient,
  python-swiftclient,
  python-lxml,
- python-netifaces
+ python-netifaces,
+ python-pecan,
+ python-extras,
+ python-wsme
 Standards-Version: 3.9.3
 
 Package: python-ceilometer
