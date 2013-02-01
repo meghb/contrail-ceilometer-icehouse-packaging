@@ -14,4 +14,4 @@ pre-start script
 	chown ceilometer:ceilometer /var/lock/ceilometer
 end script
 
-exec start-stop-daemon --start --chuid ceilometer --exec ceilometer -- --log-dir=/var/log/ceilometer
+exec start-stop-daemon --start --chuid ceilometer --exec /usr/bin/ceilometer-api -- --log-dir=/var/log/ceilometer
