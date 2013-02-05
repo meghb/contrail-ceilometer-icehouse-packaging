@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Chuck Short <zulcss@ubuntu.com>
 Build-Depends: debhelper (>= 8.0.0),
  python-all (>= 2.6),
- python-all-dev (>=  2.6.6-3~)
+ python-all-dev (>=  2.6.6-3~) | python-support,
 Build-Depends-Indep:
  python-webob,
  python-kombu,
@@ -13,7 +13,7 @@ Build-Depends-Indep:
  python-sqlalchemy,
  python-eventlet,
  python-anyjson,
- python-flask,
+ python-flask (>= 0.9),
  python-stevedore,
  python-nose,
  pep8,
@@ -67,6 +67,7 @@ Package: ceilometer-common
 Architecture: all
 Depends: python-ceilometer (= ${binary:Version}), ${python:Depends}, ${misc:Depends}, adduser
 Provides: ${python:Provides}
+Recommends: mongodb
 Description: ceilometer common files
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 

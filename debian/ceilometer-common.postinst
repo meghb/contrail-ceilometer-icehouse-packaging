@@ -1,22 +1,24 @@
 #!/bin/sh -e
 
 if [ "$1" = "configure" ]; then
-	if ! getenv group ceilometer > /dev/null 2>&1; then
-		addgroup --system ceilometer >/dev/null
-	fi
-
-	if ! getenv passwd ceilometer > /dev/null 2>&1; then
+	getent group ceilometer >/dev/null 2>&1 || addgroup --system ceilometer
+	getent passwd ceilometer >/dev/null 2>&1 ||
 		adduser --system --home /var/lib/ceilometer --ingroup ceilometer --no-create-home \
-			--shell /bin/false ceilometer
-	fi
+			-- shell /bin/false ceilometer
 
 	chown -R ceilometer:adm /var/log/ceilometer
 	chmod 0750 /var/log/ceilometer
 	chown -R ceilometer:ceilometer /var/lib/ceilometer /etc/ceilometer
 
-	if ! grep -q sql_connection /etc/ceilometer/ceilometer.conf
-	then
-		su -s /bin/sh -c 'ceilometer-dbsync' ceilometer
+        # check if mongo exists and auto configure the database
+        if [ -n "`ps aux | grep mongo | grep -v grep`" ]; then
+		# check if the config file hasn't been modified
+		if [ ! -n "`grep "^database_connection\s*\=.*" /etc/ceilometer/ceilometer.conf`" ]; then
+			# modify config file and setup mongo
+			_DATABASE_CONNECTION="mongodb://localhost:27017/ceilometer"
+			echo "database_connection = ${_DATABASE_CONNECTION}" >> /etc/ceilometer/ceilometer.conf
+			su -s /bin/sh -c '/usr/bin/ceilometer-dbsync --os-username ceilometer'
+		fi
 	fi
 fi
 #DEBHELPER#
