@@ -1,8 +1,8 @@
 ceilometer (2013.1~g2~20130107.449-0ubuntu3) UNRELEASED; urgency=low
 
   [ Yolanda Robla ]
-  * d/control: moved mongo recommends to api and collector packages,
-    refreshed dependencies
+  * d/control: moved mongo recommends to api and collector packages (LP: #1131627)
+  * d/control: refreshed dependencies
 
  -- Yolanda Robla <yolanda.robla@canonical.com>  Fri, 22 Feb 2013 10:42:00 +0100
 
