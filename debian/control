@@ -7,6 +7,7 @@ Build-Depends: debhelper (>= 8.0.0),
  python-all-dev (>=  2.6.6-3~)
 Build-Depends-Indep:
  python-nose,
+ python-unittest2,
  python-coverage,
  python-mock,
  python-mox,
@@ -18,7 +19,10 @@ Build-Depends-Indep:
  python-setuptools-git (>= 0.4),
  python-netifaces,
  python-sphinx,
- python-docutils
+ python-docutils,
+ python-oslo-config,
+ python-yaml,
+ python-flask (>= 0.9)
 Depends:
  python-webob (>= 1.2),
  python-kombu,
@@ -35,14 +39,15 @@ Depends:
  python-pecan (>= 0.2.0),
  python-stevedore (>= 0.6),
  python-glanceclient,
- python-novaclient,
- python-keystoneclient (< 0.3),
+ python-novaclient (>= 2.6.10),
+ python-keystoneclient (<< 0.3),
  python-swiftclient,
  python-lxml,
- python-requests (< 1.0),
+ python-requests,
  python-extras,
  python-wsme (>= 0.5b1),
- python-pyyaml
+ python-pyyaml,
+ python-oslo-config
 Standards-Version: 3.9.3
 
 Package: python-ceilometer
@@ -66,7 +71,6 @@ Package: ceilometer-common
 Architecture: all
 Depends: python-ceilometer (= ${binary:Version}), ${python:Depends}, ${misc:Depends}, adduser
 Provides: ${python:Provides}
-Recommends: mongodb
 Description: ceilometer common files
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 
@@ -82,6 +86,7 @@ Description: ceilometer common files
 Package: ceilometer-collector
 Architecture: all
 Depends: ceilometer-common (= ${binary:Version}), ${python:Depends}, ${misc:Depends}
+Recommends: mongodb
 Description: ceioleter collector service
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 
@@ -97,6 +102,7 @@ Description: ceioleter collector service
 Package: ceilometer-api
 Architecture: all
 Depends: ceilometer-common (= ${binary:Version}), ${python:Depends}, ${misc:Depends}
+Recommends: mongodb
 Description: ceioleter api service
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 
@@ -125,7 +131,7 @@ Description: ceioleter compute agent
 Package: ceilometer-agent-central
 Architecture: all
 Depends: ceilometer-common (= ${binary:Version}), ${python:Depends}, ${misc:Depends}
-Description: ceioleter central agent
+Description: ceilometer central agent
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 
  current and future OpenStack components. The delivery of counters must 
