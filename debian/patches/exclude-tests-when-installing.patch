@@ -1,0 +1,37 @@
+From e10fd2c0961bca3e23c743d1403fd535d2328596 Mon Sep 17 00:00:00 2001
+From: Chuck Short <chuck.short@canonical.com>
+Date: Fri, 1 Mar 2013 10:34:39 -0600
+Subject: [PATCH] Exclude tests when installing ceilometer
+
+Dont include the tests directory when installing
+ceilometer as they might conflict with other
+poorly installed packages on the users systems.
+
+Fixes LP: #1102110
+
+Signed-off-by: Chuck Short <chuck.short@canonical.com>
+---
+ setup.py          | 2 +-
+ tests/__init__.py | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ delete mode 100644 tests/__init__.py
+
+diff --git a/setup.py b/setup.py
+index 9fe04fb..9135f40 100755
+--- a/setup.py
++++ b/setup.py
+@@ -63,7 +63,7 @@ setuptools.setup(
+         'Topic :: System :: Monitoring',
+     ],
+ 
+-    packages=setuptools.find_packages(exclude=['bin']),
++    packages=setuptools.find_packages(exclude=['tests', 'bin']),
+     cmdclass=common_setup.get_cmdclass(),
+     package_data={
+         "ceilometer":
+diff --git a/tests/__init__.py b/tests/__init__.py
+deleted file mode 100644
+index e69de29..0000000
+-- 
+1.8.1.2
+
