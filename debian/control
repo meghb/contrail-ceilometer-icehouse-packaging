@@ -87,7 +87,7 @@ Package: ceilometer-collector
 Architecture: all
 Depends: ceilometer-common (= ${binary:Version}), ${python:Depends}, ${misc:Depends}
 Recommends: mongodb
-Description: ceioleter collector service
+Description: ceilometer collector service
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 
  current and future OpenStack components. The delivery of counters must 
@@ -103,7 +103,7 @@ Package: ceilometer-api
 Architecture: all
 Depends: ceilometer-common (= ${binary:Version}), ${python:Depends}, ${misc:Depends}
 Recommends: mongodb
-Description: ceioleter api service
+Description: ceilometer api service
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 
  current and future OpenStack components. The delivery of counters must 
@@ -116,7 +116,7 @@ Description: ceioleter api service
 Package: ceilometer-agent-compute
 Architecture: all
 Depends: ceilometer-common (= ${binary:Version}), ${python:Depends}, ${misc:Depends}
-Description: ceioleter compute agent
+Description: ceilometer compute agent
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all 
  current and future OpenStack components. The delivery of counters must 
