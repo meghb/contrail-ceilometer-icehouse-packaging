@@ -4,6 +4,7 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu3) UNRELEASED; urgency=low
   * d/control: moved mongo recommends to api and collector
     packages (LP: #1131627)
   * d/control: refreshed dependencies
+  * d/files: copying pipeline.yaml
 
   [ James Page ]
   * Added watch file.
@@ -12,7 +13,7 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu3) UNRELEASED; urgency=low
   * debian/patches/exclude-tests-when-isntall.patch: Exclude tests so it
     doesnt conflict with python-boto (LP: #1102110)
 
- -- Yolanda Robla <yolanda.robla@canonical.com>  Fri, 22 Feb 2013 10:42:00 +0100
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 04 Mar 2013 10:46:00 +0100
 
 ceilometer (2013.1~g2~20130107.449-0ubuntu2) UNRELEASED; urgency=low
 
