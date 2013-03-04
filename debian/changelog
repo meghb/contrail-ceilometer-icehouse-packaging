@@ -1,6 +1,16 @@
-ceilometer (2013.1~g2~20130107.449-0ubuntu2) UNRELEASED; urgency=low
+ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
 
   [ Chuck Short ]
+  * New upstream release. 
+  * debian/watch: point to the right releases.
+  * debian/rules: Enable testsuite.
+  * debian/control: Update dependencies.
+  * debian/patches/remove-unwanted-dependencies.patch: Remove mongodb dependencies.
+  * debian/ceilometer-agent-compute.postinst: Add smarts to 
+    configure users after install.
+  * debian/ceilometer-common.postinst: Configure ceilometer db.
+  * debian/ceilometer-common.install: Install configuration files.
+  * debian/*.usptart: Update and use start-stop-daemon.
   * debian/patches/exclude-tests-when-isntall.patch: Exclude tests so it
     doesnt conflict with python-boto (LP: #1102110)
 
@@ -22,21 +32,6 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu2) UNRELEASED; urgency=low
   * d/files: copying pipeline.yaml
 
  -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 04 Mar 2013 10:46:00 +0100
-
-ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
-
-  * New upstream release. 
-  * debian/watch: point to the right releases.
-  * debian/rules: Enable testsuite.
-  * debian/control: Update dependencies.
-  * debian/patches/remove-unwanted-dependencies.patch: Remove mongodb dependencies.
-  * debian/ceilometer-agent-compute.postinst: Add smarts to 
-    configure users after install.
-  * debian/ceilometer-common.postinst: Configure ceilometer db.
-  * debian/ceilometer-common.install: Install configuration files.
-  * debian/*.usptart: Update and use start-stop-daemon.
-
- -- Chuck Short <zulcss@ubuntu.com>  Tue, 08 Jan 2013 07:52:53 -0600
 
 ceilometer (0.1-0ubuntu1) quantal; urgency=low
 
