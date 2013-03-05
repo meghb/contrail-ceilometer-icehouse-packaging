@@ -1,35 +1,6 @@
-ceilometer (2013.1~g2~20130107.449-0ubuntu3) UNRELEASED; urgency=low
-
-  [ Yolanda Robla ]
-  * d/control: moved mongo recommends to api and collector
-    packages (LP: #1131627)
-  * d/control: refreshed dependencies
-
-  [ James Page ]
-  * Added watch file.
-
-  [ Chuck Short ]
-  * debian/patches/exclude-tests-when-isntall.patch: Exclude tests so it
-    doesnt conflict with python-boto (LP: #1102110)
-
- -- Yolanda Robla <yolanda.robla@canonical.com>  Fri, 22 Feb 2013 10:42:00 +0100
-
-ceilometer (2013.1~g2~20130107.449-0ubuntu2) UNRELEASED; urgency=low
-
-  [ Yolanda Robla ]
-  * d/patches: removed unused patches
-  * d/rules: copying ceilometer.conf.sample to ceilometer.conf
-  * d/ceilometer-common.install: fix copying ceilometer.conf, copy ceilometer-dbsync
-  * d/ceilometer-common.postinst: configuring mongo connection by default,
-  * fixing user/group creation
-  * d/control: updated dependencies
-  * d/*.upstart: fixed upstart jobs
-  * d/pydist-overrides: correcting pymongo and wsme package names
-
- -- Yolanda Robla <yolanda.robla@canonical.com>  Wed, 06 Feb 2013 17:42:00 +0100
-
 ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Chuck Short ]
   * New upstream release. 
   * debian/watch: point to the right releases.
   * debian/rules: Enable testsuite.
@@ -40,8 +11,28 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
   * debian/ceilometer-common.postinst: Configure ceilometer db.
   * debian/ceilometer-common.install: Install configuration files.
   * debian/*.usptart: Update and use start-stop-daemon.
+  * debian/patches/exclude-tests-when-isntall.patch: Exclude tests so it
+    doesnt conflict with python-boto (LP: #1102110)
 
- -- Chuck Short <zulcss@ubuntu.com>  Tue, 08 Jan 2013 07:52:53 -0600
+  [ James Page ]
+  * Added watch file.
+
+  [ Yolanda Robla ]
+  * d/patches: removed unused patches
+  * d/rules: copying ceilometer.conf.sample to ceilometer.conf
+  * d/ceilometer-common.install: fix copying ceilometer.conf, copy ceilometer-dbsync
+  * d/ceilometer-common.postinst: configuring mongo connection by default,
+  * fixing user/group creation
+  * d/control: updated dependencies
+  * d/*.upstart: fixed upstart jobs
+  * d/pydist-overrides: correcting pymongo and wsme package names
+  * d/control: moved mongo recommends to api and collector
+    packages (LP: #1131627)
+  * d/control: refreshed dependencies
+  * d/files: copying pipeline.yaml
+  * d/control: fixed typo (LP: #1140309)
+
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 04 Mar 2013 10:46:00 +0100
 
 ceilometer (0.1-0ubuntu1) quantal; urgency=low
 
