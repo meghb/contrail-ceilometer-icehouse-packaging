@@ -31,8 +31,9 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
   * d/control: refreshed dependencies
   * d/files: copying pipeline.yaml
   * d/control: fixed typo (LP: #1140309)
+  * debian/patches/exclude-tests-when-installing.patch: removed, not needed
 
- -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 04 Mar 2013 10:46:00 +0100
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 11 Mar 2013 14:23:00 +0100
 
 ceilometer (0.1-0ubuntu1) quantal; urgency=low
 
