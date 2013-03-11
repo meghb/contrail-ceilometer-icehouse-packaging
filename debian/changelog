@@ -32,7 +32,6 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
   * d/files: copying pipeline.yaml
   * d/control: fixed typo (LP: #1140309)
   * debian/patches/exclude-tests-when-isntall.patch: removed, not needed
-  * debian/ceilometer-common.install: Removed non-existing show_data.py  
 
  -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 11 Mar 2013 14:23:00 +0100
 

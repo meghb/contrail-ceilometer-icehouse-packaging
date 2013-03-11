@@ -3,3 +3,4 @@ etc/ceilometer/policy.json etc/ceilometer
 etc/ceilometer/sources.json etc/ceilometer
 etc/ceilometer/pipeline.yaml etc/ceilometer
 usr/bin/ceilometer-dbsync
+tools/show_data.py
