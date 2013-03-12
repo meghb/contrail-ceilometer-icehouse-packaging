@@ -13,15 +13,17 @@ if [ "$1" = "configure" ]; then
 	chmod 0750 /var/log/ceilometer
 	chown -R ceilometer:ceilometer /var/lib/ceilometer /etc/ceilometer
 
-        # check if mongo exists and auto configure the database
-        if [ -n "`ps aux | grep mongo | grep -v grep`" ]; then
-		# check if the config file hasn't been modified
-		if [ ! -n "`grep "^database_connection\s*\=.*" /etc/ceilometer/ceilometer.conf`" ]; then
-			# modify config file and setup mongo
-			_DATABASE_CONNECTION="mongodb://localhost:27017/ceilometer"
-			echo "database_connection = ${_DATABASE_CONNECTION}" >> /etc/ceilometer/ceilometer.conf
-			su -s /bin/sh -c '/usr/bin/ceilometer-dbsync --os-username ceilometer'
-		fi
+	# check if the config file hasn't been modified
+	if [ ! -n "`grep "^database_connection\s*\=.*" /etc/ceilometer/ceilometer.conf`" ]; then
+		# modify config file and setup sqlite
+		_DATABASE_CONNECTION="sqlite:////var/lib/ceilometer/ceilometer.sqlite"
+		echo "database_connection = ${_DATABASE_CONNECTION}" >> /etc/ceilometer/ceilometer.conf
+	fi
+	su -s /bin/sh -c '/usr/bin/ceilometer-dbsync --os-username ceilometer'
+
+	if [ -e /var/lib/ceilometer/ceilometer.sqlite ]; then
+		chown ceilometer:ceilometer /var/lib/ceilometer/ceilometer.sqlite
+		chmod 0600 /var/lib/ceilometer/ceilometer.sqlite
 	fi
 fi
 #DEBHELPER#

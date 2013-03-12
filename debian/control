@@ -84,7 +84,7 @@ Depends:
  ceilometer-common (= ${binary:Version}),
  ${misc:Depends},
  ${python:Depends}
-Recommends: mongodb
+Suggests: mongodb
 Description: ceilometer collector service
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all
@@ -103,7 +103,7 @@ Depends:
  ceilometer-common (= ${binary:Version}),
  ${misc:Depends},
  ${python:Depends}
-Recommends: mongodb
+Suggests: mongodb
 Description: ceilometer api service
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all

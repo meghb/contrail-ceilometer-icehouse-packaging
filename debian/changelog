@@ -29,16 +29,15 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
   [ Yolanda Robla ]
   * d/rules: Copy ceilometer.conf.sample to ceilometer.conf.
   * d/ceilometer-common.install: Install ceilometer.conf and ceilometer-dbsync.
-  * d/ceilometer-common.postinst: Configure mongo connection by default,
-    fixing user/group creation.
+  * d/ceilometer-common.postinst: Configure sqlite connection by default.
+  * d/ceilometer-common.postinst: fixing user/group creation.
   * d/*.upstart: Fix upstart jobs.
   * d/pydist-overrides: Correct pymongo and wsme package names.
-  * d/control: moved mongodb recommends to api and collector
-    packages (LP: #1131627).
+  * d/control: modified mongodb recommends to suggests (LP: #1131627).
   * d/files: copying pipeline.yaml.
   * d/control: fixed typo (LP: #1140309).
 
- -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 11 Mar 2013 14:23:00 +0100
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 12 Mar 2013 14:21:00 +0100
 
 ceilometer (0.1-0ubuntu1) quantal; urgency=low
 
