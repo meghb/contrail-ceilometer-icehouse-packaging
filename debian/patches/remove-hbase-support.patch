@@ -5,9 +5,8 @@ Forwarded: not-needed
 
 --- a/tools/pip-requires
 +++ b/tools/pip-requires
-@@ -25,4 +25,4 @@ extras
+@@ -25,4 +25,3 @@ extras
  wsme>=0.5b1
  pyyaml
- http://tarballs.openstack.org/oslo-config/oslo.config-1.1.0b1.tar.gz#egg=oslo.config
+ oslo.config>=1.1.0
 -happybase>=0.4
-+#happybase>=0.4
