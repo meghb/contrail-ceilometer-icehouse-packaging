@@ -4,8 +4,8 @@ Forwarded: no
 
 --- a/tools/pip-requires
 +++ b/tools/pip-requires
-@@ -20,7 +20,7 @@ python-novaclient>=2.6.10
- http://tarballs.openstack.org/python-keystoneclient/python-keystoneclient-master.tar.gz#egg=python-keystoneclient
+@@ -15,7 +15,7 @@ python-novaclient>=2.6.10
+ python-keystoneclient>=0.2.3
  python-swiftclient
  lxml
 -requests<1.0

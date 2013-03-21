@@ -5,7 +5,7 @@ Forwarded: not-needed
 
 --- a/tools/pip-requires
 +++ b/tools/pip-requires
-@@ -25,4 +25,3 @@ extras
+@@ -20,4 +20,3 @@ extras
  wsme>=0.5b1
  pyyaml
  oslo.config>=1.1.0

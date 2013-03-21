@@ -1,5 +1,3 @@
-Index: etc/ceilometer/ceilometer.conf.sample
-===================================================================
 --- a/etc/ceilometer/ceilometer.conf.sample
 +++ b/etc/ceilometer/ceilometer.conf.sample
 @@ -262,7 +262,7 @@
