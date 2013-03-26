@@ -39,6 +39,12 @@ ceilometer (2013.1~g2~20130107.449-0ubuntu1) UNRELEASED; urgency=low
 
  -- Yolanda Robla <yolanda.robla@canonical.com>  Mon, 12 Mar 2013 15:41:00 +0100
 
+ceilometer (0.1-0ubuntu2) raring; urgency=low
+
+  * Fix typo in debian/control (ceioleter -> ceilometer) (LP: #1140309)
+
+ -- Hans Joachim Desserud <ubuntu@desserud.org>  Sun, 03 Mar 2013 20:08:39 +0100
+
 ceilometer (0.1-0ubuntu1) quantal; urgency=low
 
   * New upstream release.
