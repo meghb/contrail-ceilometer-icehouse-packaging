@@ -1,3 +1,9 @@
+ceilometer (2013.1-0ubuntu1) raring; urgency=low
+
+  * New upstream release. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 05 Apr 2013 14:34:37 -0500
+
 ceilometer (2013.1~rc1-0ubuntu1) raring; urgency=low
 
   [ Chuck Short ]
