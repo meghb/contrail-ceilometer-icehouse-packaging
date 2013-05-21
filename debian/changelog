@@ -1,3 +1,18 @@
+ceilometer (2013.2.a151.geaa6b33-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * debian/rules: Add fail-missing if binaries are missing 
+    from the packages.
+  * debian/control: Add python-happybase as build-dependencies.
+  * debian/control: Add python-pbr and python-d2to1 as build-dependencies
+  * debian/control: Add python-fixtures as build-dependencies.
+  * debian/control: Add python-nova as build-dependencies.
+  * debian/patches/requests-dep.patch: Dropped no longer needed.
+  * debian/patches/remove-hbase-support.patch: Dropped no longer neded.
+  * debian/patches/default-dbconnection-sqlite.patch: Refreshed.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 21 May 2013 07:49:01 -0500
+
 ceilometer (2013.1-0ubuntu1) raring; urgency=low
 
   * New upstream release. 

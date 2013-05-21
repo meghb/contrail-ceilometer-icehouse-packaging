@@ -1,11 +1,11 @@
---- a/etc/ceilometer/ceilometer.conf.sample
-+++ b/etc/ceilometer/ceilometer.conf.sample
-@@ -262,7 +262,7 @@
+diff -Naurp ceilometer-2013.2.a151.geaa6b33.orig/etc/ceilometer/ceilometer.conf.sample ceilometer-2013.2.a151.geaa6b33/etc/ceilometer/ceilometer.conf.sample
+--- ceilometer-2013.2.a151.geaa6b33.orig/etc/ceilometer/ceilometer.conf.sample	2013-05-21 07:45:54.000000000 -0500
++++ ceilometer-2013.2.a151.geaa6b33/etc/ceilometer/ceilometer.conf.sample	2013-05-21 08:00:43.786560523 -0500
+@@ -405,6 +405,7 @@
  
- ######## defined in ceilometer.storage ########
- 
--# database_connection=mongodb://localhost:27017/ceilometer
+ # Database connection string (string value)
+ #database_connection=mongodb://localhost:27017/ceilometer
 +database_connection=sqlite:////var/lib/ceilometer/ceilometer.sqlite
- #### (StrOpt) Database connection string
  
  
+ ######## defined in ceilometer.storage.sqlalchemy.models ########

@@ -19,7 +19,7 @@ endif
 
 override_dh_install:
 	cp etc/ceilometer/ceilometer.conf.sample etc/ceilometer/ceilometer.conf
-	dh_install
+	dh_install --fail-missing
 
 override_dh_auto_clean:
 	rm -f etc/ceilometer/ceilometer.conf
