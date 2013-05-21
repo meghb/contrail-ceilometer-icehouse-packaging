@@ -7,6 +7,7 @@ ceilometer (2013.2.a151.geaa6b33-0ubuntu1) UNRELEASED; urgency=low
   * debian/control: Add python-pbr and python-d2to1 as build-dependencies
   * debian/control: Add python-fixtures as build-dependencies.
   * debian/control: Add python-nova as build-dependencies.
+  * debian/control: Add python-testtools
   * debian/patches/requests-dep.patch: Dropped no longer needed.
   * debian/patches/remove-hbase-support.patch: Dropped no longer neded.
   * debian/patches/default-dbconnection-sqlite.patch: Refreshed.
