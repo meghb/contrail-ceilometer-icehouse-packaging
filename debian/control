@@ -27,7 +27,6 @@ Build-Depends:
  python-mox,
  python-netaddr,
  python-netifaces,
- python-nose,
  python-nova,
  python-novaclient (>= 2.6.10),
  python-oslo.config,
@@ -45,7 +44,9 @@ Build-Depends:
  python-unittest2,
  python-webob (>= 1.2),
  python-wsme (>= 0.5b1),
- python-yaml
+ python-yaml,
+ testrepository,
+ msgpack-python
 Standards-Version: 3.9.4
 
 Package: python-ceilometer

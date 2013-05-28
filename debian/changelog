@@ -1,4 +1,4 @@
-ceilometer (2013.2.a151.geaa6b33-0ubuntu1) UNRELEASED; urgency=low
+ceilometer (2013.2.a175.gae9ccbd-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release.
   * debian/rules: Add fail-missing if binaries are missing 
@@ -8,9 +8,12 @@ ceilometer (2013.2.a151.geaa6b33-0ubuntu1) UNRELEASED; urgency=low
   * debian/control: Add python-fixtures as build-dependencies.
   * debian/control: Add python-nova as build-dependencies.
   * debian/control: Add python-testtools
+  * debian/control: Add msgpack-python.
   * debian/patches/requests-dep.patch: Dropped no longer needed.
   * debian/patches/remove-hbase-support.patch: Dropped no longer neded.
   * debian/patches/default-dbconnection-sqlite.patch: Refreshed.
+  * debian/rules: Use testr instead of nosetests to run tests.
+  * debian/ceilometer-collector.install: Added usr/bin/ceilometer-collector-udp.
 
  -- Chuck Short <zulcss@ubuntu.com>  Tue, 21 May 2013 07:49:01 -0500
 
