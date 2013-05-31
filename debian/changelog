@@ -15,7 +15,7 @@ ceilometer (2013.2~b1-0ubuntu1) saucy; urgency=low
   * debian/rules: Use testr instead of nosetests to run tests.
   * debian/ceilometer-collector.install: Added usr/bin/ceilometer-collector-udp.
 
- -- Chuck Short <zulcss@ubuntu.com>  Fri, 31 May 2013 10:16:01 -0500
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 31 May 2013 10:29:16 -0500
 
 ceilometer (2013.1-0ubuntu1) raring; urgency=low
 
