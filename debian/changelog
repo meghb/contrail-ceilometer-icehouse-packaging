@@ -1,3 +1,9 @@
+ceilometer (2013.2~b1-0ubuntu2) UNRELEASED; urgency=low
+
+  * debian/patches/default-dbconnection-sqlite.patch: updated db section
+
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Wed, 05 Jun 2013 11:46:29 +0200
+
 ceilometer (2013.2~b1-0ubuntu1) saucy; urgency=low
 
   * New upstream release.

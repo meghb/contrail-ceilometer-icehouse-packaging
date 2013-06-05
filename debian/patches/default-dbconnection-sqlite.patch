@@ -1,11 +1,12 @@
-diff -Naurp ceilometer-2013.2.a175.gae9ccbd.orig/etc/ceilometer/ceilometer.conf.sample ceilometer-2013.2.a175.gae9ccbd/etc/ceilometer/ceilometer.conf.sample
---- ceilometer-2013.2.a175.gae9ccbd.orig/etc/ceilometer/ceilometer.conf.sample	2013-05-27 20:11:35.000000000 -0500
-+++ ceilometer-2013.2.a175.gae9ccbd/etc/ceilometer/ceilometer.conf.sample	2013-05-27 20:16:48.569019601 -0500
-@@ -497,6 +497,7 @@
+Index: ceilometer/etc/ceilometer/ceilometer.conf.sample
+===================================================================
+--- a/etc/ceilometer/ceilometer.conf.sample   2013-06-04 17:46:52.000000000 +0000
++++ b/etc/ceilometer/ceilometer.conf.sample        2013-06-05 09:36:45.074895860 +0000
+@@ -517,6 +517,7 @@
+ # The SQLAlchemy connection string used to connect to the
+ # database (string value)
+ #connection=sqlite:////common/db/$sqlite_db
++connection=sqlite:////var/lib/ceilometer/ceilometer.sqlite
  
- # Database connection string (string value)
- #database_connection=mongodb://localhost:27017/ceilometer
-+database_connection=sqlite:////var/lib/ceilometer/ceilometer.sqlite
- 
- 
- #
+ # timeout before idle sql connections are reaped (integer
+ # value)
