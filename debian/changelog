@@ -1,6 +1,15 @@
-ceilometer (2013.2~b1-0ubuntu2) UNRELEASED; urgency=low
+ceilometer (2013.2.a76.g1d13c31-0ubuntu1) UNRELEASED; urgency=low
 
+  [ Yolanda Robla ]
   * debian/patches/default-dbconnection-sqlite.patch: updated db section
+
+  [ Chuck Short ]
+  * New upstream version.
+  * debian/control: Suggest python-happybase.
+  * debian/patches/default-dbconnection-sqlite.patch: Refreshed.
+  * debian/control: Bump requirements for stevedore to 0.9.
+  * debian/patches/fix-setup-requirements.patch: Drop happybase requirements.
+  * debian/control: Add python-simplejson
 
  -- Yolanda Robla <yolanda.robla@canonical.com>  Wed, 05 Jun 2013 11:46:29 +0200
 

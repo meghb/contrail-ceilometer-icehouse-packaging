@@ -1,12 +1,12 @@
-Index: ceilometer/etc/ceilometer/ceilometer.conf.sample
-===================================================================
---- a/etc/ceilometer/ceilometer.conf.sample   2013-06-04 17:46:52.000000000 +0000
-+++ b/etc/ceilometer/ceilometer.conf.sample        2013-06-05 09:36:45.074895860 +0000
-@@ -517,6 +517,7 @@
- # The SQLAlchemy connection string used to connect to the
- # database (string value)
- #connection=sqlite:////common/db/$sqlite_db
-+connection=sqlite:////var/lib/ceilometer/ceilometer.sqlite
+diff -Naurp ceilometer-2013.2.a76.g1d13c31.orig/etc/ceilometer/ceilometer.conf.sample ceilometer-2013.2.a76.g1d13c31/etc/ceilometer/ceilometer.conf.sample
+--- ceilometer-2013.2.a76.g1d13c31.orig/etc/ceilometer/ceilometer.conf.sample	2013-06-17 07:37:03.000000000 -0500
++++ ceilometer-2013.2.a76.g1d13c31/etc/ceilometer/ceilometer.conf.sample	2013-06-17 07:48:41.024448351 -0500
+@@ -88,7 +88,7 @@
+ #
  
- # timeout before idle sql connections are reaped (integer
- # value)
+ # the filename to use with sqlite (string value)
+-#sqlite_db=ceilometer.sqlite
++sqlite_db=sqlite:////var/lib/ceilometer/ceilometer.sqlite
+ 
+ # If true, use synchronous mode for sqlite (boolean value)
+ #sqlite_synchronous=true
