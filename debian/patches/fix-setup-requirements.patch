@@ -1,8 +1,9 @@
-diff -Naurp ceilometer-2013.2.a76.g1d13c31.orig/requirements.txt ceilometer-2013.2.a76.g1d13c31/requirements.txt
---- ceilometer-2013.2.a76.g1d13c31.orig/requirements.txt	2013-06-17 07:37:03.000000000 -0500
-+++ ceilometer-2013.2.a76.g1d13c31/requirements.txt	2013-06-17 08:59:55.100450424 -0500
-@@ -22,4 +22,3 @@ requests>=1.1,<1.2.1
+Index: c-git/requirements.txt
+===================================================================
+--- c-git.orig/requirements.txt	2013-07-02 17:49:09.547219444 -0700
++++ c-git/requirements.txt	2013-07-02 17:49:35.687220690 -0700
+@@ -23,4 +23,3 @@
  wsme>=0.5b2
  pyyaml
- oslo.config>=1.1.0
+ http://tarballs.openstack.org/oslo.config/oslo.config-1.2.0a2.tar.gz#egg=oslo.config-1.2.0a2
 -happybase>=0.4
