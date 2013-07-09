@@ -11,6 +11,9 @@ ceilometer (2013.2.a76.g1d13c31-0ubuntu1) UNRELEASED; urgency=low
   * debian/patches/fix-setup-requirements.patch: Drop happybase requirements.
   * debian/control: Add python-simplejson
 
+  [ James Page ]
+  * d/control: Update VCS fields for new branch locations.
+
  -- Yolanda Robla <yolanda.robla@canonical.com>  Wed, 05 Jun 2013 11:46:29 +0200
 
 ceilometer (2013.2~b1-0ubuntu1) saucy; urgency=low

@@ -48,6 +48,8 @@ Build-Depends:
  testrepository,
  msgpack-python
 Standards-Version: 3.9.4
+Vcs-Browser: http://bazaar.launchpad.net/~ubuntu-server-dev/ceilometer/havana/files
+Vcs-Bzr: https://code.launchpad.net/~ubuntu-server-dev/ceilometer/havana
 
 Package: python-ceilometer
 Architecture: all
