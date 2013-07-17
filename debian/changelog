@@ -1,4 +1,4 @@
-ceilometer (2013.2.a76.g1d13c31-0ubuntu1) UNRELEASED; urgency=low
+ceilometer (2013.2.a251.g267075b-0ubuntu1) UNRELEASED; urgency=low
 
   [ Yolanda Robla ]
   * debian/patches/default-dbconnection-sqlite.patch: updated db section
@@ -10,6 +10,10 @@ ceilometer (2013.2.a76.g1d13c31-0ubuntu1) UNRELEASED; urgency=low
   * debian/control: Bump requirements for stevedore to 0.9.
   * debian/patches/fix-setup-requirements.patch: Drop happybase requirements.
   * debian/control: Add python-simplejson
+  * debian/control: Drop python-keystoneclient hardcoded version.
+  * debian/control: Add python-testscenarios as a build depends.
+  * debian/control: Add python-cinderclient as a build depends.
+  * debian/control: Add python-ceilometerclient as a build depends.
 
   [ James Page ]
   * d/control: Update VCS fields for new branch locations.

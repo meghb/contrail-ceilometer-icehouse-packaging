@@ -13,7 +13,6 @@ get-orig-source:
 
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 override_dh_auto_test:
-	mkdir -p ${HOME}
 	testr init && testr run || true
 endif
 
@@ -23,5 +22,4 @@ override_dh_install:
 
 override_dh_auto_clean:
 	rm -f etc/ceilometer/ceilometer.conf
-	rm -f ${HOME}
 	dh_auto_clean
