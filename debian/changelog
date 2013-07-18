@@ -14,6 +14,9 @@ ceilometer (2013.2.a251.g267075b-0ubuntu1) UNRELEASED; urgency=low
   * debian/control: Add python-testscenarios as a build depends.
   * debian/control: Add python-cinderclient as a build depends.
   * debian/control: Add python-ceilometerclient as a build depends.
+  * debian/control: Add python-alembic as build depends.
+  * debian/control: Add python-oslo.sphinx as build-depends.
+  * debian/control: Update runtime depends.
 
   [ James Page ]
   * d/control: Update VCS fields for new branch locations.
