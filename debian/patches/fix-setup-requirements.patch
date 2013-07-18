@@ -1,7 +1,12 @@
-diff -Naupr ceilometer-2013.2.a251.g267075b.orig/requirements.txt ceilometer-2013.2.a251.g267075b/requirements.txt
+diff -Naurp ceilometer-2013.2.a251.g267075b.orig/requirements.txt ceilometer-2013.2.a251.g267075b/requirements.txt
 --- ceilometer-2013.2.a251.g267075b.orig/requirements.txt	2013-07-17 13:05:52.000000000 -0400
-+++ ceilometer-2013.2.a251.g267075b/requirements.txt	2013-07-17 13:46:43.901494778 -0400
-@@ -20,9 +20,8 @@ python-keystoneclient>=0.2,<0.3
++++ ceilometer-2013.2.a251.g267075b/requirements.txt	2013-07-18 08:43:29.669527850 -0400
+@@ -16,13 +16,12 @@ stevedore>=0.9
+ msgpack-python
+ python-glanceclient
+ python-novaclient>=2.6.10
+-python-keystoneclient>=0.2,<0.3
++python-keystoneclient>=0.2,<0.3.2
  python-ceilometerclient>=1.0.1
  python-swiftclient
  lxml

@@ -17,6 +17,8 @@ ceilometer (2013.2.a251.g267075b-0ubuntu1) UNRELEASED; urgency=low
   * debian/control: Add python-alembic as build depends.
   * debian/control: Add python-oslo.sphinx as build-depends.
   * debian/control: Update runtime depends.
+  * debian/ceilometer-common.install: Add ceilometer-alarm-singleton,
+    ceilometer-alarm-notifier, and ceilometer-expirer.
 
   [ James Page ]
   * d/control: Update VCS fields for new branch locations.

@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Chuck Short <zulcss@ubuntu.com>
 Build-Depends:
  debhelper (>= 8.0.0),
- python-alembic,
+ alembic,
  python-all (>= 2.6),
  python-anyjson (>= 0.3.3),
  python-babel (>= 0.9.6),
@@ -64,7 +64,7 @@ Depends: ${misc:Depends}, ${python:Depends},
  python-iso8601,
  python-sqlalchemy,
  python-migrate,
- python-alembic,
+ alembic,
  python-pymongo,
  python-eventlet,
  python-anjson,

@@ -4,3 +4,6 @@ etc/ceilometer/policy.json etc/ceilometer
 etc/ceilometer/sources.json etc/ceilometer
 etc/ceilometer/pipeline.yaml etc/ceilometer
 usr/bin/ceilometer-dbsync
+usr/bin/ceilometer-alarm-singleton
+usr/bin/ceilometer-alarm-notifier
+usr/bin/ceilometer-expirer
