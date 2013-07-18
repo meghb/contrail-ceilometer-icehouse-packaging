@@ -4,9 +4,9 @@ Source: https://github.com/stackforge/ceilometer
 
 Files: *
 Copyright: 2012 New Dream Network, LLC (DreamHost)
-           2012 eNovance 
+           2012 eNovance
            2012 Red Hat Inc.
-           2010 United States Government 
+           2010 United States Government
            2011 Cloudscaling Group, Inc
            2011 OpenStack LLC.
            2012 Nicolas Barcet for Canonical
@@ -43,4 +43,3 @@ License: Apache-2
  .
  On Debian-based systems the full text of the Apache version 2.0 license
  can be found in `/usr/share/common-licenses/Apache-2.0'.
-

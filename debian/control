@@ -3,8 +3,9 @@ Section: python
 Priority: optional
 Maintainer: Chuck Short <zulcss@ubuntu.com>
 Build-Depends:
- debhelper (>= 8.0.0),
  alembic,
+ debhelper (>= 8.0.0),
+ msgpack-python,
  python-all (>= 2.6),
  python-anyjson (>= 0.3.3),
  python-babel (>= 0.9.6),
@@ -19,7 +20,7 @@ Build-Depends:
  python-flask (>= 0.9),
  python-glanceclient,
  python-iso8601,
- python-keystoneclient (>= 0.2),
+ python-keystoneclient (>= 1:0.2),
  python-kombu (>= 2.4.7),
  python-lockfile,
  python-lxml,
@@ -29,8 +30,8 @@ Build-Depends:
  python-netaddr,
  python-netifaces,
  python-nova,
- python-novaclient (>= 2.6.10),
- python-oslo.config (>= 1.2.0a3),
+ python-novaclient (>= 1:2.6.10),
+ python-oslo.config (>= 1:1.2.0a3),
  python-oslo.sphinx,
  python-pbr,
  python-pecan (>= 0.2.0),
@@ -50,38 +51,39 @@ Build-Depends:
  python-webob (>= 1.2),
  python-wsme (>= 0.5b2),
  python-yaml,
- testrepository (>= 0.0.13),
- msgpack-python
+ testrepository (>= 0.0.13)
 Standards-Version: 3.9.4
 Vcs-Browser: http://bazaar.launchpad.net/~ubuntu-server-dev/ceilometer/havana/files
 Vcs-Bzr: https://code.launchpad.net/~ubuntu-server-dev/ceilometer/havana
 
 Package: python-ceilometer
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends},
- python-weob,
- python-kombu,
- python-iso8601,
- python-sqlalchemy,
- python-migrate,
+Depends:
  alembic,
- python-pymongo,
- python-eventlet,
- python-anjson,
- python-flask,
- python-pecan,
- python-stevedore,
  msgpack-python,
- python-glanceclient,
- python-novaclient,
- python-keystoneclient,
+ python-anjson,
  python-ceilometerclient,
- python-swfitclient,
+ python-eventlet,
+ python-flask,
+ python-glanceclient,
+ python-iso8601,
+ python-keystoneclient,
+ python-kombu,
  python-lxml,
- python-requests,
- python-wsme,
+ python-migrate,
+ python-novaclient,
+ python-oslo.config,
+ python-pecan,
+ python-pymongo,
  python-pyyaml,
- python-oslo.config 
+ python-requests,
+ python-sqlalchemy,
+ python-stevedore,
+ python-swfitclient,
+ python-weob,
+ python-wsme,
+ ${misc:Depends},
+ ${python:Depends}
 Suggests: python-happybase
 Description: ceilometer python libraries
  Ceilometer aims to deliver a unique point of contact for billing systems to
