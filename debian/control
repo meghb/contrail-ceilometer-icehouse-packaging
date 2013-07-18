@@ -19,6 +19,7 @@ Build-Depends:
  python-fixtures (>= 0.3.12),
  python-flask (>= 0.9),
  python-glanceclient,
+ python-happybase,
  python-iso8601,
  python-keystoneclient (>= 1:0.2),
  python-kombu (>= 2.4.7),
@@ -66,6 +67,7 @@ Depends:
  python-eventlet,
  python-flask,
  python-glanceclient,
+ python-happybase,
  python-iso8601,
  python-keystoneclient,
  python-kombu,
@@ -84,7 +86,6 @@ Depends:
  python-wsme,
  ${misc:Depends},
  ${python:Depends}
-Suggests: python-happybase
 Description: ceilometer python libraries
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all

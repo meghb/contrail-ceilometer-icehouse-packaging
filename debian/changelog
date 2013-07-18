@@ -5,7 +5,6 @@ ceilometer (2013.2.a251.g267075b-0ubuntu1) UNRELEASED; urgency=low
 
   [ Chuck Short ]
   * New upstream version.
-  * debian/control: Suggest python-happybase.
   * debian/patches/default-dbconnection-sqlite.patch: Refreshed.
   * debian/control: Bump requirements for stevedore to 0.9.
   * debian/patches/fix-setup-requirements.patch: Drop happybase requirements.
@@ -17,8 +16,11 @@ ceilometer (2013.2.a251.g267075b-0ubuntu1) UNRELEASED; urgency=low
   * debian/control: Add python-alembic as build depends.
   * debian/control: Add python-oslo.sphinx as build-depends.
   * debian/control: Update runtime depends.
+  * debian/control: Add python-happybase.
   * debian/ceilometer-common.install: Add ceilometer-alarm-singleton,
     ceilometer-alarm-notifier, and ceilometer-expirer.
+  * debian/patches/skip-database-tests.patch: Skip database tests
+    if the database is not installed.
 
   [ James Page ]
   * d/control: Update VCS fields for new branch locations.

@@ -1,0 +1,18 @@
+Description: Skip database tests if you are unable to connect.
+Author: Chuck Short <zulcss@ubuntu.com>
+Forwarded: No
+diff -Naurp ceilometer-2013.2.a251.g267075b.orig/ceilometer/tests/db.py ceilometer-2013.2.a251.g267075b/ceilometer/tests/db.py
+--- ceilometer-2013.2.a251.g267075b.orig/ceilometer/tests/db.py	2013-07-17 13:05:52.000000000 -0400
++++ ceilometer-2013.2.a251.g267075b/ceilometer/tests/db.py	2013-07-18 10:34:43.709531086 -0400
+@@ -31,7 +31,10 @@ class TestBase(test_base.TestCase):
+         super(TestBase, self).setUp()
+         cfg.CONF.set_override('connection', self.database_connection,
+                               group='database')
+-        self.conn = storage.get_connection(cfg.CONF)
++        try:
++            self.conn = storage.get_connection(cfg.CONF)
++        except:
++            self.skipTest('Unable to connect to database')
+         self.conn.upgrade()
+         self.conn.clear()
+         self.conn.upgrade()
