@@ -1,7 +1,7 @@
-diff -Naurp ceilometer-2013.2.a251.g267075b.orig/ceilometer/tests/db.py ceilometer-2013.2.a251.g267075b/ceilometer/tests/db.py
---- ceilometer-2013.2.a251.g267075b.orig/ceilometer/tests/db.py	2013-07-17 13:05:52.000000000 -0400
-+++ ceilometer-2013.2.a251.g267075b/ceilometer/tests/db.py	2013-07-18 12:36:32.985534630 -0400
-@@ -31,7 +31,10 @@ class TestBase(test_base.TestCase):
+diff -Naurp ceilometer-2013.2.b2.orig/ceilometer/tests/db.py ceilometer-2013.2.b2/ceilometer/tests/db.py
+--- ceilometer-2013.2.b2.orig/ceilometer/tests/db.py	2013-07-18 11:34:34.000000000 -0400
++++ ceilometer-2013.2.b2/ceilometer/tests/db.py	2013-07-19 09:38:56.957571357 -0400
+@@ -31,6 +31,9 @@ class TestBase(test_base.TestCase):
          super(TestBase, self).setUp()
          cfg.CONF.set_override('connection', self.database_connection,
                                group='database')
@@ -12,10 +12,49 @@ diff -Naurp ceilometer-2013.2.a251.g267075b.orig/ceilometer/tests/db.py ceilomet
 +            self.skipTest('Unable to connect to database')
          self.conn.upgrade()
          self.conn.clear()
-         self.conn.upgrade()
-diff -Naurp ceilometer-2013.2.a251.g267075b.orig/tests/api/v2/acl.py ceilometer-2013.2.a251.g267075b/tests/api/v2/acl.py
---- ceilometer-2013.2.a251.g267075b.orig/tests/api/v2/acl.py	2013-07-17 13:05:52.000000000 -0400
-+++ ceilometer-2013.2.a251.g267075b/tests/api/v2/acl.py	2013-07-18 12:58:26.865535267 -0400
+diff -Naurp ceilometer-2013.2.b2.orig/ceilometer/tests/db.py.orig ceilometer-2013.2.b2/ceilometer/tests/db.py.orig
+--- ceilometer-2013.2.b2.orig/ceilometer/tests/db.py.orig	1969-12-31 19:00:00.000000000 -0500
++++ ceilometer-2013.2.b2/ceilometer/tests/db.py.orig	2013-07-18 11:34:34.000000000 -0400
+@@ -0,0 +1,36 @@
++# -*- encoding: utf-8 -*-
++#
++# Copyright © 2012 New Dream Network, LLC (DreamHost)
++# Copyright © 2013 eNovance
++#
++# Author: Doug Hellmann <doug.hellmann@dreamhost.com>
++#         Julien Danjou <julien@danjou.info>
++#
++# Licensed under the Apache License, Version 2.0 (the "License"); you may
++# not use this file except in compliance with the License. You may obtain
++# a copy of the License at
++#
++#      http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++# License for the specific language governing permissions and limitations
++# under the License.
++
++"""Base classes for API tests."""
++
++from oslo.config import cfg
++
++from ceilometer import storage
++from ceilometer.tests import base as test_base
++
++
++class TestBase(test_base.TestCase):
++    def setUp(self):
++        super(TestBase, self).setUp()
++        cfg.CONF.set_override('connection', self.database_connection,
++                              group='database')
++        self.conn = storage.get_connection(cfg.CONF)
++        self.conn.upgrade()
++        self.conn.clear()
+diff -Naurp ceilometer-2013.2.b2.orig/tests/api/v2/acl.py ceilometer-2013.2.b2/tests/api/v2/acl.py
+--- ceilometer-2013.2.b2.orig/tests/api/v2/acl.py	2013-07-18 11:34:34.000000000 -0400
++++ ceilometer-2013.2.b2/tests/api/v2/acl.py	2013-07-19 09:38:56.961571357 -0400
 @@ -148,60 +148,75 @@ class TestAPIACL(FunctionalTest):
      #     self.assertEqual(response.status_int, 401)
  
@@ -129,9 +168,9 @@ diff -Naurp ceilometer-2013.2.a251.g267075b.orig/tests/api/v2/acl.py ceilometer-
          #TODO(asalkeld) revert this with wsme-0.5b3+
  #        self.assertEqual(data.status_int, 401)
          self.assertEqual(data.status_int, 400)
-diff -Naurp ceilometer-2013.2.a251.g267075b.orig/tests/api/v2/test_app.py ceilometer-2013.2.a251.g267075b/tests/api/v2/test_app.py
---- ceilometer-2013.2.a251.g267075b.orig/tests/api/v2/test_app.py	2013-07-17 13:05:52.000000000 -0400
-+++ ceilometer-2013.2.a251.g267075b/tests/api/v2/test_app.py	2013-07-18 12:37:59.329534672 -0400
+diff -Naurp ceilometer-2013.2.b2.orig/tests/api/v2/test_app.py ceilometer-2013.2.b2/tests/api/v2/test_app.py
+--- ceilometer-2013.2.b2.orig/tests/api/v2/test_app.py	2013-07-18 11:34:33.000000000 -0400
++++ ceilometer-2013.2.b2/tests/api/v2/test_app.py	2013-07-19 09:38:56.961571357 -0400
 @@ -40,7 +40,10 @@ class TestApp(base.TestCase):
          cfg.CONF.set_override("auth_version", "v2.0", group=acl.OPT_GROUP_NAME)
          cfg.CONF.set_override("pipeline_cfg_file",
@@ -144,9 +183,9 @@ diff -Naurp ceilometer-2013.2.a251.g267075b.orig/tests/api/v2/test_app.py ceilom
          self.assertEqual(api_app.auth_protocol, 'foottp')
  
      def test_keystone_middleware_parse_conffile(self):
-diff -Naurp ceilometer-2013.2.a251.g267075b.orig/tests/test_bin.py ceilometer-2013.2.a251.g267075b/tests/test_bin.py
---- ceilometer-2013.2.a251.g267075b.orig/tests/test_bin.py	2013-07-17 13:05:52.000000000 -0400
-+++ ceilometer-2013.2.a251.g267075b/tests/test_bin.py	2013-07-18 13:02:24.621535382 -0400
+diff -Naurp ceilometer-2013.2.b2.orig/tests/test_bin.py ceilometer-2013.2.b2/tests/test_bin.py
+--- ceilometer-2013.2.b2.orig/tests/test_bin.py	2013-07-18 11:34:33.000000000 -0400
++++ ceilometer-2013.2.b2/tests/test_bin.py	2013-07-19 09:38:56.961571357 -0400
 @@ -36,13 +36,19 @@ class BinTestCase(base.TestCase):
              tmp.write("connection=log://localhost\n")
  
