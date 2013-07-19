@@ -41,7 +41,7 @@ Build-Depends:
  python-setuptools-git (>= 0.4),
  python-simplejson,
  python-sphinx,
- python-sqlalchemy (>= 0.7),
+ python-sqlalchemy,
  python-stevedore (>= 0.9),
  python-subunit,
  python-swift,

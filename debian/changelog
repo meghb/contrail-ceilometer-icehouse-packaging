@@ -1,3 +1,9 @@
+ceilometer (2013.2~b2-0ubuntu2) saucy; urgency=low
+
+  * debian/control: Fix sqlalchemy dependency. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Fri, 19 Jul 2013 14:51:18 -0400
+
 ceilometer (2013.2~b2-0ubuntu1) saucy; urgency=low
 
   [ Yolanda Robla ]
