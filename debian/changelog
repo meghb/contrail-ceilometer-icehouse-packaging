@@ -5,7 +5,7 @@ ceilometer (2013.2~b2-0ubuntu3) saucy; urgency=low
   * debian/patches/fix-setup-requirements.patch: Refreshed
   * debian/patches/skip-database-tests.patch: Refreshed
 
- -- Chuck Short <zulcss@ubuntu.com>  Mon, 22 Jul 2013 18:06:05 +0000
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 22 Jul 2013 15:17:35 -0400
 
 ceilometer (2013.2~b2-0ubuntu2) saucy; urgency=low
 
