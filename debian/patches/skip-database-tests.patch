@@ -1,6 +1,6 @@
 diff -Naurp ceilometer-2013.2.b2.orig/ceilometer/tests/db.py ceilometer-2013.2.b2/ceilometer/tests/db.py
---- ceilometer-2013.2.b2.orig/ceilometer/tests/db.py	2013-07-18 11:34:34.000000000 -0400
-+++ ceilometer-2013.2.b2/ceilometer/tests/db.py	2013-07-19 09:38:56.957571357 -0400
+--- ceilometer-2013.2.b2.orig/ceilometer/tests/db.py	2013-07-18 15:34:34.000000000 +0000
++++ ceilometer-2013.2.b2/ceilometer/tests/db.py	2013-07-22 17:53:35.155020840 +0000
 @@ -31,6 +31,9 @@ class TestBase(test_base.TestCase):
          super(TestBase, self).setUp()
          cfg.CONF.set_override('connection', self.database_connection,
@@ -13,8 +13,8 @@ diff -Naurp ceilometer-2013.2.b2.orig/ceilometer/tests/db.py ceilometer-2013.2.b
          self.conn.upgrade()
          self.conn.clear()
 diff -Naurp ceilometer-2013.2.b2.orig/ceilometer/tests/db.py.orig ceilometer-2013.2.b2/ceilometer/tests/db.py.orig
---- ceilometer-2013.2.b2.orig/ceilometer/tests/db.py.orig	1969-12-31 19:00:00.000000000 -0500
-+++ ceilometer-2013.2.b2/ceilometer/tests/db.py.orig	2013-07-18 11:34:34.000000000 -0400
+--- ceilometer-2013.2.b2.orig/ceilometer/tests/db.py.orig	1970-01-01 00:00:00.000000000 +0000
++++ ceilometer-2013.2.b2/ceilometer/tests/db.py.orig	2013-07-22 17:53:35.155020840 +0000
 @@ -0,0 +1,36 @@
 +# -*- encoding: utf-8 -*-
 +#
@@ -53,8 +53,8 @@ diff -Naurp ceilometer-2013.2.b2.orig/ceilometer/tests/db.py.orig ceilometer-201
 +        self.conn.upgrade()
 +        self.conn.clear()
 diff -Naurp ceilometer-2013.2.b2.orig/tests/api/v2/acl.py ceilometer-2013.2.b2/tests/api/v2/acl.py
---- ceilometer-2013.2.b2.orig/tests/api/v2/acl.py	2013-07-18 11:34:34.000000000 -0400
-+++ ceilometer-2013.2.b2/tests/api/v2/acl.py	2013-07-19 09:38:56.961571357 -0400
+--- ceilometer-2013.2.b2.orig/tests/api/v2/acl.py	2013-07-18 15:34:34.000000000 +0000
++++ ceilometer-2013.2.b2/tests/api/v2/acl.py	2013-07-22 18:09:46.331043995 +0000
 @@ -148,60 +148,75 @@ class TestAPIACL(FunctionalTest):
      #     self.assertEqual(response.status_int, 401)
  
@@ -133,11 +133,12 @@ diff -Naurp ceilometer-2013.2.b2.orig/tests/api/v2/acl.py ceilometer-2013.2.b2/t
 +                                 q=[{'field': 'project_id',
 +                                     'value': 'project-wrong',
 +                                     }])
-+        except:
-+            self.skipTest('Skipped by Ubuntu')
          #TODO(asalkeld) revert this with wsme-0.5b3+
  #        self.assertEqual(data.status_int, 401)
-         self.assertEqual(data.status_int, 400)
+-        self.assertEqual(data.status_int, 400)
++            self.assertEqual(data.status_int, 400)
++        except:
++            self.skipTest('Skipped by Ubuntu')
  
      def test_non_admin_two_projects(self):
 -        data = self.get_json('/meters',
@@ -163,14 +164,15 @@ diff -Naurp ceilometer-2013.2.b2.orig/tests/api/v2/acl.py ceilometer-2013.2.b2/t
 +                                    {'field': 'project_id',
 +                                    'value': 'project-naughty',
 +                                    }])
-+        except:
-+            self.skipTest('Skipped by Ubuntu')
          #TODO(asalkeld) revert this with wsme-0.5b3+
  #        self.assertEqual(data.status_int, 401)
-         self.assertEqual(data.status_int, 400)
+-        self.assertEqual(data.status_int, 400)
++            self.assertEqual(data.status_int, 400)
++        except:
++            self.skipTest('Skipped by Ubuntu')
 diff -Naurp ceilometer-2013.2.b2.orig/tests/api/v2/test_app.py ceilometer-2013.2.b2/tests/api/v2/test_app.py
---- ceilometer-2013.2.b2.orig/tests/api/v2/test_app.py	2013-07-18 11:34:33.000000000 -0400
-+++ ceilometer-2013.2.b2/tests/api/v2/test_app.py	2013-07-19 09:38:56.961571357 -0400
+--- ceilometer-2013.2.b2.orig/tests/api/v2/test_app.py	2013-07-18 15:34:33.000000000 +0000
++++ ceilometer-2013.2.b2/tests/api/v2/test_app.py	2013-07-22 17:53:35.155020840 +0000
 @@ -40,7 +40,10 @@ class TestApp(base.TestCase):
          cfg.CONF.set_override("auth_version", "v2.0", group=acl.OPT_GROUP_NAME)
          cfg.CONF.set_override("pipeline_cfg_file",
@@ -184,8 +186,8 @@ diff -Naurp ceilometer-2013.2.b2.orig/tests/api/v2/test_app.py ceilometer-2013.2
  
      def test_keystone_middleware_parse_conffile(self):
 diff -Naurp ceilometer-2013.2.b2.orig/tests/test_bin.py ceilometer-2013.2.b2/tests/test_bin.py
---- ceilometer-2013.2.b2.orig/tests/test_bin.py	2013-07-18 11:34:33.000000000 -0400
-+++ ceilometer-2013.2.b2/tests/test_bin.py	2013-07-19 09:38:56.961571357 -0400
+--- ceilometer-2013.2.b2.orig/tests/test_bin.py	2013-07-18 15:34:33.000000000 +0000
++++ ceilometer-2013.2.b2/tests/test_bin.py	2013-07-22 18:03:52.627035562 +0000
 @@ -36,13 +36,19 @@ class BinTestCase(base.TestCase):
              tmp.write("connection=log://localhost\n")
  
@@ -210,7 +212,7 @@ diff -Naurp ceilometer-2013.2.b2.orig/tests/test_bin.py ceilometer-2013.2.b2/tes
          self.assertEqual(subp.wait(), 0)
  
  
-@@ -59,10 +65,13 @@ class BinSendCounterTestCase(base.TestCa
+@@ -59,11 +65,14 @@ class BinSendCounterTestCase(base.TestCa
                  "pipeline_cfg_file=%s\n" % pipeline_cfg_file)
  
      def test_send_counter_run(self):
@@ -218,16 +220,18 @@ diff -Naurp ceilometer-2013.2.b2.orig/tests/test_bin.py ceilometer-2013.2.b2/tes
 -                                 "--config-file=%s" % self.tempfile,
 -                                 "--counter-resource=someuuid",
 -                                 "--counter-name=mycounter"])
+-        self.assertEqual(subp.wait(), 0)
 +        try:
 +            subp = subprocess.Popen([self.path_get('bin/ceilometer-send-counter'),
 +                                    "--config-file=%s" % self.tempfile,
 +                                    "--counter-resource=someuuid",
 +                                    "--counter-name=mycounter"])
++       	    self.assertEqual(subp.wait(), 0)
 +        except:
-+            self.skiptest('Skipped by Ubuntu')
-         self.assertEqual(subp.wait(), 0)
++            self.skipTest('Skipped by Ubuntu')
  
  
+ class BinApiTestCase(base.TestCase):
 @@ -92,9 +101,12 @@ class BinApiTestCase(base.TestCase):
                  "port=%s\n" % self.api_port)
              tmp.write("[database]\n")

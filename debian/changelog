@@ -1,3 +1,12 @@
+ceilometer (2013.2~b2-0ubuntu3) saucy; urgency=low
+
+  * debian/rules: Enable testsuite.
+  * debian/control: Fix up run time dependencies.
+  * debian/patches/fix-setup-requirements.patch: Refreshed
+  * debian/patches/skip-database-tests.patch: Refreshed
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 22 Jul 2013 18:06:05 +0000
+
 ceilometer (2013.2~b2-0ubuntu2) saucy; urgency=low
 
   * debian/control: Fix sqlalchemy dependency. 

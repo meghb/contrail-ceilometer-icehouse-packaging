@@ -1,6 +1,15 @@
-diff -Naurp ceilometer-2013.2.a251.g267075b.orig/requirements.txt ceilometer-2013.2.a251.g267075b/requirements.txt
---- ceilometer-2013.2.a251.g267075b.orig/requirements.txt	2013-07-17 13:05:52.000000000 -0400
-+++ ceilometer-2013.2.a251.g267075b/requirements.txt	2013-07-18 08:43:29.669527850 -0400
+diff -Naurp ceilometer-2013.2.b2.orig/requirements.txt ceilometer-2013.2.b2/requirements.txt
+--- ceilometer-2013.2.b2.orig/requirements.txt	2013-07-18 15:34:33.000000000 +0000
++++ ceilometer-2013.2.b2/requirements.txt	2013-07-22 17:46:30.067010706 +0000
+@@ -4,7 +4,7 @@ WebOb>=1.2
+ kombu>2.4.7
+ iso8601
+ argparse
+-SQLAlchemy>=0.7,<=0.7.99
++SQLAlchemy>=0.7,<=0.8.99
+ sqlalchemy-migrate>=0.7.2
+ alembic>=0.4.1
+ pymongo>=2.2
 @@ -16,13 +16,12 @@ stevedore>=0.9
  msgpack-python
  python-glanceclient
