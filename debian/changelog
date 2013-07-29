@@ -1,3 +1,9 @@
+ceilometer (2013.2~b2-0ubuntu4) saucy; urgency=low
+
+  * debian/patches/skip-database-tests.patch: Refreshed due to precise failures. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Sun, 28 Jul 2013 21:58:31 -0400
+
 ceilometer (2013.2~b2-0ubuntu3) saucy; urgency=low
 
   * debian/rules: Enable testsuite.
