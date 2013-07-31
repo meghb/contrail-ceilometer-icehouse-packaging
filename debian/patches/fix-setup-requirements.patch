@@ -1,6 +1,6 @@
-diff -Naurp ceilometer-2013.2.b2.orig/requirements.txt ceilometer-2013.2.b2/requirements.txt
---- ceilometer-2013.2.b2.orig/requirements.txt	2013-07-18 15:34:33.000000000 +0000
-+++ ceilometer-2013.2.b2/requirements.txt	2013-07-22 17:46:30.067010706 +0000
+diff -Naurp ceilometer-2013.2.a317.gc9cd931.orig/requirements.txt ceilometer-2013.2.a317.gc9cd931/requirements.txt
+--- ceilometer-2013.2.a317.gc9cd931.orig/requirements.txt	2013-07-31 13:04:05.000000000 +0000
++++ ceilometer-2013.2.a317.gc9cd931/requirements.txt	2013-07-31 13:09:00.543679844 +0000
 @@ -4,7 +4,7 @@ WebOb>=1.2
  kombu>2.4.7
  iso8601
@@ -9,20 +9,13 @@ diff -Naurp ceilometer-2013.2.b2.orig/requirements.txt ceilometer-2013.2.b2/requ
 +SQLAlchemy>=0.7,<=0.8.99
  sqlalchemy-migrate>=0.7.2
  alembic>=0.4.1
- pymongo>=2.2
-@@ -16,13 +16,12 @@ stevedore>=0.9
- msgpack-python
- python-glanceclient
- python-novaclient>=2.6.10
--python-keystoneclient>=0.2,<0.3
-+python-keystoneclient>=0.2,<0.3.2
+ netaddr
+@@ -21,7 +21,7 @@ python-keystoneclient>=0.3.0
  python-ceilometerclient>=1.0.1
  python-swiftclient
  lxml
 -requests>=1.1,<1.2.1
 +requests>=1.1
+ six
  wsme>=0.5b2
  pyyaml
- -f http://tarballs.openstack.org/oslo.config/oslo.config-1.2.0a3.tar.gz#egg=oslo.config-1.2.0a3
- oslo.config>=1.2.0a3
--happybase>=0.4

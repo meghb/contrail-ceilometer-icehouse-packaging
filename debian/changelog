@@ -1,3 +1,11 @@
+ceilometer (2013.2.a317.gc9cd931-0ubuntu1) UNRELEASED; urgency=low
+
+  * New upstream release. 
+  * debian/patches/fix-setup-requirements.patch: Refreshed
+  * debian/patches/skip-database.patch: Refreshed
+
+ -- Chuck Short <zulcss@ubuntu.com>  Wed, 31 Jul 2013 13:06:13 +0000
+
 ceilometer (2013.2~b2-0ubuntu4) saucy; urgency=low
 
   * debian/patches/skip-database-tests.patch: Refreshed due to precise failures. 
