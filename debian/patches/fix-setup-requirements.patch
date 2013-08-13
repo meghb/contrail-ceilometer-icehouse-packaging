@@ -1,21 +1,12 @@
-diff -Naurp ceilometer-2013.2.a317.gc9cd931.orig/requirements.txt ceilometer-2013.2.a317.gc9cd931/requirements.txt
---- ceilometer-2013.2.a317.gc9cd931.orig/requirements.txt	2013-07-31 13:04:05.000000000 +0000
-+++ ceilometer-2013.2.a317.gc9cd931/requirements.txt	2013-07-31 13:09:00.543679844 +0000
-@@ -4,7 +4,7 @@ WebOb>=1.2
- kombu>2.4.7
- iso8601
+diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/requirements.txt ceilometer-2013.2.a378.g90ad86c/requirements.txt
+--- ceilometer-2013.2.a378.g90ad86c.orig/requirements.txt	2013-08-12 19:45:11.000000000 +0000
++++ ceilometer-2013.2.a378.g90ad86c/requirements.txt	2013-08-12 19:49:21.467156844 +0000
+@@ -3,7 +3,7 @@ WebOb>=1.2.3,<1.3
+ kombu>=2.4.8
+ iso8601>=0.1.4
  argparse
--SQLAlchemy>=0.7,<=0.7.99
-+SQLAlchemy>=0.7,<=0.8.99
+-SQLAlchemy>=0.7.8,<=0.7.99
++SQLAlchemy>=0.7.8,<=0.8.99
  sqlalchemy-migrate>=0.7.2
  alembic>=0.4.1
  netaddr
-@@ -21,7 +21,7 @@ python-keystoneclient>=0.3.0
- python-ceilometerclient>=1.0.1
- python-swiftclient
- lxml
--requests>=1.1,<1.2.1
-+requests>=1.1
- six
- wsme>=0.5b2
- pyyaml

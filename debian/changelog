@@ -1,4 +1,4 @@
-ceilometer (2013.2.a317.gc9cd931-0ubuntu1) UNRELEASED; urgency=low
+ceilometer (2013.2.a378.g90ad86c-0ubuntu1) UNRELEASED; urgency=low
 
   * New upstream release. 
   * debian/patches/fix-setup-requirements.patch: Refreshed
