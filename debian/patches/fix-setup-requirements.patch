@@ -1,7 +1,8 @@
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/requirements.txt ceilometer-2013.2.a378.g90ad86c/requirements.txt
---- ceilometer-2013.2.a378.g90ad86c.orig/requirements.txt	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/requirements.txt	2013-08-12 19:49:21.467156844 +0000
-@@ -3,7 +3,7 @@ WebOb>=1.2.3,<1.3
+diff --git a/requirements.txt b/requirements.txt
+index c08e2d2..027655f 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -3,14 +3,14 @@ WebOb>=1.2.3,<1.3
  kombu>=2.4.8
  iso8601>=0.1.4
  argparse
@@ -10,3 +11,14 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/requirements.txt ceilometer-201
  sqlalchemy-migrate>=0.7.2
  alembic>=0.4.1
  netaddr
+ pymongo>=2.4
+ eventlet>=0.13.0
+ anyjson>=0.3.3
+-Flask==0.9
++Flask==0.10.1
+ pecan>=0.2.0
+ stevedore>=0.10
+ msgpack-python
+-- 
+1.8.3.2
+
