@@ -1,7 +1,8 @@
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/ceilometer/tests/db.py ceilometer-2013.2.a378.g90ad86c/ceilometer/tests/db.py
---- ceilometer-2013.2.a378.g90ad86c.orig/ceilometer/tests/db.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/ceilometer/tests/db.py	2013-08-12 22:50:52.123156844 +0000
-@@ -50,9 +50,7 @@ class MongoDBFakeConnectionUrl(object):
+diff --git a/ceilometer/tests/db.py b/ceilometer/tests/db.py
+index 6a767cf..f9213e2 100644
+--- a/ceilometer/tests/db.py
++++ b/ceilometer/tests/db.py
+@@ -56,9 +56,7 @@ class MongoDBFakeConnectionUrl(object):
      def __init__(self):
          self.url = os.environ.get('CEILOMETER_TEST_MONGODB_URL')
          if not self.url:
@@ -12,17 +13,19 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/ceilometer/tests/db.py ceilomet
  
      def __str__(self):
          return '%(url)s_%(db)s' % dict(url=self.url, db=uuid.uuid4().hex)
-@@ -63,6 +61,4 @@ class MixinTestsWithBackendScenarios(obj
+@@ -83,7 +81,4 @@ class MixinTestsWithBackendScenarios(object):
  
      scenarios = [
          ('sqlalchemy', dict(database_connection='sqlite://')),
 -        ('mongodb', dict(database_connection=MongoDBFakeConnectionUrl())),
 -        ('hbase', dict(database_connection='hbase://__test__')),
+-        ('db2', dict(database_connection=DB2FakeConnectionUrl())),
      ]
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/agentbase.py ceilometer-2013.2.a378.g90ad86c/tests/agentbase.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/agentbase.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/agentbase.py	2013-08-12 22:49:41.115156844 +0000
-@@ -174,7 +174,10 @@ class BaseAgentManagerTestCase(base.Test
+diff --git a/tests/agentbase.py b/tests/agentbase.py
+index 7e8263b..28ddee3 100644
+--- a/tests/agentbase.py
++++ b/tests/agentbase.py
+@@ -174,7 +174,10 @@ class BaseAgentManagerTestCase(base.TestCase):
          self.assertEqual(len(polling_tasks), 1)
          self.assertTrue(60 in polling_tasks.keys())
          self.mgr.interval_task(polling_tasks.values()[0])
@@ -30,11 +33,11 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/agentbase.py ceilometer-2
 +        try:
 +            pub = self.mgr.pipeline_manager.pipelines[0].publishers[0]
 +        except:
-+            self.skipTest('Skipped by Ubuntu')
-         self.assertEqual(pub.counters[0], self.Pollster.test_data)
++            self.skipTest("Skipped by Ubuntu")
+         self.assertEqual(pub.samples[0], self.Pollster.test_data)
  
      def test_setup_polling_tasks_multiple_interval(self):
-@@ -243,5 +246,8 @@ class BaseAgentManagerTestCase(base.Test
+@@ -243,5 +246,8 @@ class BaseAgentManagerTestCase(base.TestCase):
          self.assertEqual(len(polling_tasks.keys()), 1)
          polling_tasks.get(10)
          self.mgr.interval_task(polling_tasks.get(10))
@@ -42,11 +45,12 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/agentbase.py ceilometer-2
 +        try:
 +            pub = self.mgr.pipeline_manager.pipelines[0].publishers[0]
 +        except:
-+            self.skipTest('Skipped by Ubuntu')
-         self.assertEqual(len(pub.counters), 0)
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/alarm/test_notifier.py ceilometer-2013.2.a378.g90ad86c/tests/alarm/test_notifier.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/alarm/test_notifier.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/alarm/test_notifier.py	2013-08-13 00:44:22.471156844 +0000
++            self.skipTest("Skipped by Ubuntu")
+         self.assertEqual(len(pub.samples), 0)
+diff --git a/tests/alarm/test_notifier.py b/tests/alarm/test_notifier.py
+index 3d71b75..46ea1aa 100644
+--- a/tests/alarm/test_notifier.py
++++ b/tests/alarm/test_notifier.py
 @@ -58,7 +58,10 @@ class TestAlarmNotifier(base.TestCase):
              'reason': 'Everything is on fire',
          }
@@ -135,9 +139,10 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/alarm/test_notifier.py ce
  
          with mock.patch('eventlet.spawn_n', self._fake_spawn_n):
              with mock.patch.object(requests, 'post') as poster:
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/api/v2/test_app.py ceilometer-2013.2.a378.g90ad86c/tests/api/v2/test_app.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/api/v2/test_app.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/api/v2/test_app.py	2013-08-13 00:12:42.539156844 +0000
+diff --git a/tests/api/v2/test_app.py b/tests/api/v2/test_app.py
+index d829d47..44a9626 100644
+--- a/tests/api/v2/test_app.py
++++ b/tests/api/v2/test_app.py
 @@ -45,7 +45,10 @@ class TestApp(base.TestCase):
          cfg.CONF.set_override("pipeline_cfg_file",
                                self.path_get("etc/ceilometer/pipeline.yaml"))
@@ -162,10 +167,11 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/api/v2/test_app.py ceilom
          self.assertEqual(api_app.auth_protocol, 'barttp')
          os.unlink(tmpfile)
  
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/collector/dispatcher/test_db.py ceilometer-2013.2.a378.g90ad86c/tests/collector/dispatcher/test_db.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/collector/dispatcher/test_db.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/collector/dispatcher/test_db.py	2013-08-12 22:49:41.119156844 +0000
-@@ -30,7 +30,10 @@ class TestDispatcherDB(tests_base.TestCa
+diff --git a/tests/collector/dispatcher/test_db.py b/tests/collector/dispatcher/test_db.py
+index 16e1d47..063d461 100644
+--- a/tests/collector/dispatcher/test_db.py
++++ b/tests/collector/dispatcher/test_db.py
+@@ -30,7 +30,10 @@ class TestDispatcherDB(tests_base.TestCase):
  
      def setUp(self):
          super(TestDispatcherDB, self).setUp()
@@ -177,10 +183,11 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/collector/dispatcher/test
          self.ctx = None
  
      def test_valid_message(self):
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/collector/test_service.py ceilometer-2013.2.a378.g90ad86c/tests/collector/test_service.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/collector/test_service.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/collector/test_service.py	2013-08-13 00:13:56.051156844 +0000
-@@ -114,7 +114,10 @@ class TestUDPCollectorService(TestCollec
+diff --git a/tests/collector/test_service.py b/tests/collector/test_service.py
+index 949d9b9..9a6d583 100644
+--- a/tests/collector/test_service.py
++++ b/tests/collector/test_service.py
+@@ -114,7 +114,10 @@ class TestUDPCollectorService(TestCollector):
  
      def setUp(self):
          super(TestUDPCollectorService, self).setUp()
@@ -192,7 +199,7 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/collector/test_service.py
          self.counter = sample.Sample(
              name='foobar',
              type='bad',
-@@ -176,7 +179,10 @@ class TestCollectorService(TestCollector
+@@ -176,7 +179,10 @@ class TestCollectorService(TestCollector):
  
      def setUp(self):
          super(TestCollectorService, self).setUp()
@@ -203,11 +210,12 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/collector/test_service.py
 +            self.skipTest('Skipped by ubuntu')
          self.ctx = None
  
-     def test_service_has_storage_conn(self):
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/compute/pollsters/test_location_metadata.py ceilometer-2013.2.a378.g90ad86c/tests/compute/pollsters/test_location_metadata.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/compute/pollsters/test_location_metadata.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/compute/pollsters/test_location_metadata.py	2013-08-12 22:49:41.119156844 +0000
-@@ -47,7 +47,10 @@ class TestLocationMetadata(test_base.Tes
+     @patch('ceilometer.pipeline.setup_pipeline', MagicMock())
+diff --git a/tests/compute/pollsters/test_location_metadata.py b/tests/compute/pollsters/test_location_metadata.py
+index a2e5c18..ef887ee 100644
+--- a/tests/compute/pollsters/test_location_metadata.py
++++ b/tests/compute/pollsters/test_location_metadata.py
+@@ -47,7 +47,10 @@ class TestLocationMetadata(test_base.TestCase):
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
      def setUp(self):
@@ -219,9 +227,10 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/compute/pollsters/test_lo
          super(TestLocationMetadata, self).setUp()
  
          # Mimics an instance returned from nova api call
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/compute/test_manager.py ceilometer-2013.2.a378.g90ad86c/tests/compute/test_manager.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/compute/test_manager.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/compute/test_manager.py	2013-08-12 22:49:41.119156844 +0000
+diff --git a/tests/compute/test_manager.py b/tests/compute/test_manager.py
+index 02eb612..33addf0 100644
+--- a/tests/compute/test_manager.py
++++ b/tests/compute/test_manager.py
 @@ -29,7 +29,10 @@ class TestManager(base.TestCase):
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
@@ -234,7 +243,7 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/compute/test_manager.py c
          self.assertIsNotNone(list(mgr.pollster_manager))
  
  
-@@ -42,7 +45,10 @@ class TestRunTasks(agentbase.BaseAgentMa
+@@ -42,7 +45,10 @@ class TestRunTasks(agentbase.BaseAgentManagerTestCase):
          return instance
  
      def setup_manager(self):
@@ -246,9 +255,10 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/compute/test_manager.py c
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
      def setUp(self):
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/storage/test_get_engine.py ceilometer-2013.2.a378.g90ad86c/tests/storage/test_get_engine.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/storage/test_get_engine.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/storage/test_get_engine.py	2013-08-12 22:49:41.119156844 +0000
+diff --git a/tests/storage/test_get_engine.py b/tests/storage/test_get_engine.py
+index 498b6f4..4824461 100644
+--- a/tests/storage/test_get_engine.py
++++ b/tests/storage/test_get_engine.py
 @@ -31,7 +31,10 @@ class EngineTest(testtools.TestCase):
          conf = mox.Mox().CreateMockAnything()
          conf.database = mox.Mox().CreateMockAnything()
@@ -261,9 +271,10 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/storage/test_get_engine.p
          self.assertIsInstance(engine, impl_log.LogStorage)
  
      def test_get_engine_no_such_engine(self):
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/test_bin.py ceilometer-2013.2.a378.g90ad86c/tests/test_bin.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/test_bin.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/test_bin.py	2013-08-12 22:49:41.123156844 +0000
+diff --git a/tests/test_bin.py b/tests/test_bin.py
+index a358b57..bc2cd2a 100644
+--- a/tests/test_bin.py
++++ b/tests/test_bin.py
 @@ -36,14 +36,20 @@ class BinTestCase(base.TestCase):
              tmp.write("connection=log://localhost\n")
  
@@ -291,7 +302,7 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/test_bin.py ceilometer-20
  
  
  class BinSendCounterTestCase(base.TestCase):
-@@ -59,11 +65,14 @@ class BinSendCounterTestCase(base.TestCa
+@@ -59,11 +65,14 @@ class BinSendCounterTestCase(base.TestCase):
                  "pipeline_cfg_file=%s\n" % pipeline_cfg_file)
  
      def test_send_counter_run(self):
@@ -325,10 +336,11 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/test_bin.py ceilometer-20
  
      def tearDown(self):
          super(BinApiTestCase, self).tearDown()
-diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/test_notifier.py ceilometer-2013.2.a378.g90ad86c/tests/test_notifier.py
---- ceilometer-2013.2.a378.g90ad86c.orig/tests/test_notifier.py	2013-08-12 19:45:11.000000000 +0000
-+++ ceilometer-2013.2.a378.g90ad86c/tests/test_notifier.py	2013-08-12 22:49:41.123156844 +0000
-@@ -80,7 +80,11 @@ class TestNotifier(tests_base.TestCase):
+diff --git a/tests/test_notifier.py b/tests/test_notifier.py
+index 814dca1..9a659fb 100644
+--- a/tests/test_notifier.py
++++ b/tests/test_notifier.py
+@@ -80,7 +80,10 @@ class TestNotifier(tests_base.TestCase):
              }],
              transformer_manager)
  
@@ -337,7 +349,6 @@ diff -Naurp ceilometer-2013.2.a378.g90ad86c.orig/tests/test_notifier.py ceilomet
 +            pub = notifier._pipeline_manager.pipelines[0].publishers[0]
 +        except:
 +            self.skipTest('Skipped by Ubuntu')
-+
-         self.assertEqual(len(pub.counters), 0)
+         self.assertEqual(len(pub.samples), 0)
          notifier.notify(None, MESSAGE)
-         self.assertTrue(len(pub.counters) > 0)
+         self.assertTrue(len(pub.samples) > 0)
