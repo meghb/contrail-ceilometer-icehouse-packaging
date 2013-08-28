@@ -1,0 +1,2 @@
+Tests: test_daemons
+Depends: ceilometer-common, ceilometer-collector, ceilometer-api, ceilometer-agent-compute, ceilometer-agent-central
