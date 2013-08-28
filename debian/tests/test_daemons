@@ -1,7 +1,7 @@
 #!/bin/bash
-#---------------------
-# Testing nova-daemons
-#---------------------
+#---------------------------
+# Testing ceilometer-daemons
+#---------------------------
 set -e
 DAEMONS=('ceilometer-collector' 'ceilometer-api' 'ceilometer-agent-compute' 'ceilometer-agent-central')
 
