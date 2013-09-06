@@ -11,6 +11,7 @@ ceilometer (2013.2~b3-0ubuntu1) saucy; urgency=low
   [ Adam Gandelman ]
   * debian/patches/default-dbconnection-sqlite.patch: Set 'connection' flag
     in [database] section, referencing 'sqlite_db' (LP: #1221956).
+  * debian/rules: Clean python-pbr egg if it exists.
 
  -- Adam Gandelman <adamg@ubuntu.com>  Fri, 06 Sep 2013 15:52:35 -0700
 
