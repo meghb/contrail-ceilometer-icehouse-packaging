@@ -1,7 +1,7 @@
-ceilometer (2013.2.a491.gd4fe261-0ubuntu2) UNRELEASED; urgency=low
+ceilometer (2013.2~b3-0ubuntu1) saucy; urgency=low
 
   [ Chuck Short ]
-  * New upstream release. 
+  * New upstream release.
   * debian/patches/fix-setup-requirements.patch: Refreshed
   * debian/patches/skip-database.patch: Refreshed
 
@@ -12,7 +12,7 @@ ceilometer (2013.2.a491.gd4fe261-0ubuntu2) UNRELEASED; urgency=low
   * debian/patches/default-dbconnection-sqlite.patch: Set 'connection' flag
     in [database] section, referencing 'sqlite_db' (LP: #1221956).
 
- -- Adam Gandelman <adamg@ubuntu.com>  Fri, 06 Sep 2013 15:51:15 -0700
+ -- Adam Gandelman <adamg@ubuntu.com>  Fri, 06 Sep 2013 15:52:35 -0700
 
 ceilometer (2013.2~b2-0ubuntu4) saucy; urgency=low
 
