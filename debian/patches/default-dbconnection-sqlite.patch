@@ -1,7 +1,8 @@
-diff -Naurp ceilometer-2013.2.a76.g1d13c31.orig/etc/ceilometer/ceilometer.conf.sample ceilometer-2013.2.a76.g1d13c31/etc/ceilometer/ceilometer.conf.sample
---- ceilometer-2013.2.a76.g1d13c31.orig/etc/ceilometer/ceilometer.conf.sample	2013-06-17 07:37:03.000000000 -0500
-+++ ceilometer-2013.2.a76.g1d13c31/etc/ceilometer/ceilometer.conf.sample	2013-06-17 07:48:41.024448351 -0500
-@@ -88,7 +88,7 @@
+Index: ceilometer/etc/ceilometer/ceilometer.conf.sample
+===================================================================
+--- ceilometer.orig/etc/ceilometer/ceilometer.conf.sample	2013-09-06 15:42:57.871578646 -0700
++++ ceilometer/etc/ceilometer/ceilometer.conf.sample	2013-09-06 15:42:57.863578646 -0700
+@@ -111,7 +111,7 @@
  #
  
  # the filename to use with sqlite (string value)
