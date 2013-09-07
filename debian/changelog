@@ -1,4 +1,4 @@
-ceilometer (2013.2~b3-0ubuntu1) saucy; urgency=low
+ceilometer (2013.2~b3-0ubuntu1) UNRELEASED; urgency=low
 
   [ Chuck Short ]
   * New upstream release.
@@ -11,7 +11,10 @@ ceilometer (2013.2~b3-0ubuntu1) saucy; urgency=low
   [ Adam Gandelman ]
   * debian/patches/default-dbconnection-sqlite.patch: Set 'connection' flag
     in [database] section, referencing 'sqlite_db' (LP: #1221956).
-  * debian/rules: Clean python-pbr egg if it exists.
+  * debian/patches/skip-database-tests.patch: Also patch out db2 and hbase
+    scenarios in v2 test_statistics_scenarios.py.
+  * debian/rules: Clean python-pbr egg if it exists, set PYTHONPATH to build
+    dir when running tests.
 
  -- Adam Gandelman <adamg@ubuntu.com>  Fri, 06 Sep 2013 15:52:35 -0700
 

@@ -1,7 +1,7 @@
 Index: ceilometer/ceilometer/tests/db.py
 ===================================================================
---- ceilometer.orig/ceilometer/tests/db.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/ceilometer/tests/db.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/ceilometer/tests/db.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/ceilometer/tests/db.py	2013-09-06 18:17:42.575494571 -0700
 @@ -41,8 +41,8 @@
                  message='.*you must provide a username and password.*')
              try:
@@ -34,8 +34,8 @@ Index: ceilometer/ceilometer/tests/db.py
      ]
 Index: ceilometer/tests/agentbase.py
 ===================================================================
---- ceilometer.orig/tests/agentbase.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/agentbase.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/agentbase.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/agentbase.py	2013-09-06 18:17:42.575494571 -0700
 @@ -174,7 +174,10 @@
          self.assertEqual(len(polling_tasks), 1)
          self.assertTrue(60 in polling_tasks.keys())
@@ -60,8 +60,8 @@ Index: ceilometer/tests/agentbase.py
          self.assertEqual(len(pub.samples), 0)
 Index: ceilometer/tests/alarm/test_notifier.py
 ===================================================================
---- ceilometer.orig/tests/alarm/test_notifier.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/alarm/test_notifier.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/alarm/test_notifier.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/alarm/test_notifier.py	2013-09-06 18:17:42.575494571 -0700
 @@ -58,7 +58,10 @@
              'reason': 'Everything is on fire',
          }
@@ -152,8 +152,8 @@ Index: ceilometer/tests/alarm/test_notifier.py
              with mock.patch.object(requests, 'post') as poster:
 Index: ceilometer/tests/api/v1/test_compute_duration_by_resource_scenarios.py
 ===================================================================
---- ceilometer.orig/tests/api/v1/test_compute_duration_by_resource_scenarios.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/api/v1/test_compute_duration_by_resource_scenarios.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/api/v1/test_compute_duration_by_resource_scenarios.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/api/v1/test_compute_duration_by_resource_scenarios.py	2013-09-06 18:17:42.575494571 -0700
 @@ -85,7 +85,10 @@
          assert data['duration'] is None
  
@@ -168,8 +168,8 @@ Index: ceilometer/tests/api/v1/test_compute_duration_by_resource_scenarios.py
      def test_overlap_range_start(self):
 Index: ceilometer/tests/api/v2/test_app.py
 ===================================================================
---- ceilometer.orig/tests/api/v2/test_app.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/api/v2/test_app.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/api/v2/test_app.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/api/v2/test_app.py	2013-09-06 18:17:42.575494571 -0700
 @@ -45,7 +45,10 @@
          cfg.CONF.set_override("pipeline_cfg_file",
                                self.path_get("etc/ceilometer/pipeline.yaml"))
@@ -196,8 +196,8 @@ Index: ceilometer/tests/api/v2/test_app.py
  
 Index: ceilometer/tests/collector/dispatcher/test_db.py
 ===================================================================
---- ceilometer.orig/tests/collector/dispatcher/test_db.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/collector/dispatcher/test_db.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/collector/dispatcher/test_db.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/collector/dispatcher/test_db.py	2013-09-06 18:17:42.575494571 -0700
 @@ -30,7 +30,10 @@
  
      def setUp(self):
@@ -212,8 +212,8 @@ Index: ceilometer/tests/collector/dispatcher/test_db.py
      def test_valid_message(self):
 Index: ceilometer/tests/collector/test_service.py
 ===================================================================
---- ceilometer.orig/tests/collector/test_service.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/collector/test_service.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/collector/test_service.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/collector/test_service.py	2013-09-06 18:17:42.575494571 -0700
 @@ -115,7 +115,10 @@
  
      def setUp(self):
@@ -268,8 +268,8 @@ Index: ceilometer/tests/collector/test_service.py
              [extension.Extension('test',
 Index: ceilometer/tests/compute/pollsters/test_location_metadata.py
 ===================================================================
---- ceilometer.orig/tests/compute/pollsters/test_location_metadata.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/compute/pollsters/test_location_metadata.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/compute/pollsters/test_location_metadata.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/compute/pollsters/test_location_metadata.py	2013-09-06 18:17:42.575494571 -0700
 @@ -47,7 +47,10 @@
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
@@ -284,8 +284,8 @@ Index: ceilometer/tests/compute/pollsters/test_location_metadata.py
          # Mimics an instance returned from nova api call
 Index: ceilometer/tests/compute/test_manager.py
 ===================================================================
---- ceilometer.orig/tests/compute/test_manager.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/compute/test_manager.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/compute/test_manager.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/compute/test_manager.py	2013-09-06 18:17:42.575494571 -0700
 @@ -29,7 +29,10 @@
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
@@ -312,8 +312,8 @@ Index: ceilometer/tests/compute/test_manager.py
      def setUp(self):
 Index: ceilometer/tests/storage/test_get_engine.py
 ===================================================================
---- ceilometer.orig/tests/storage/test_get_engine.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/storage/test_get_engine.py	2013-09-06 15:44:10.691577986 -0700
+--- ceilometer.orig/tests/storage/test_get_engine.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/storage/test_get_engine.py	2013-09-06 18:17:42.575494571 -0700
 @@ -31,7 +31,10 @@
          conf = mox.Mox().CreateMockAnything()
          conf.database = mox.Mox().CreateMockAnything()
@@ -328,8 +328,8 @@ Index: ceilometer/tests/storage/test_get_engine.py
      def test_get_engine_no_such_engine(self):
 Index: ceilometer/tests/test_bin.py
 ===================================================================
---- ceilometer.orig/tests/test_bin.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/test_bin.py	2013-09-06 15:44:10.695577986 -0700
+--- ceilometer.orig/tests/test_bin.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/test_bin.py	2013-09-06 18:17:42.575494571 -0700
 @@ -36,14 +36,20 @@
              tmp.write("connection=log://localhost\n")
  
@@ -393,8 +393,8 @@ Index: ceilometer/tests/test_bin.py
          super(BinApiTestCase, self).tearDown()
 Index: ceilometer/tests/test_notifier.py
 ===================================================================
---- ceilometer.orig/tests/test_notifier.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/test_notifier.py	2013-09-06 15:44:10.695577986 -0700
+--- ceilometer.orig/tests/test_notifier.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/test_notifier.py	2013-09-06 18:17:42.575494571 -0700
 @@ -80,7 +80,10 @@
              }],
              transformer_manager)
@@ -409,8 +409,8 @@ Index: ceilometer/tests/test_notifier.py
          self.assertTrue(len(pub.samples) > 0)
 Index: ceilometer/tests/test_service.py
 ===================================================================
---- ceilometer.orig/tests/test_service.py	2013-09-06 15:44:10.699577986 -0700
-+++ ceilometer/tests/test_service.py	2013-09-06 15:44:10.695577986 -0700
+--- ceilometer.orig/tests/test_service.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/test_service.py	2013-09-06 18:17:42.575494571 -0700
 @@ -98,8 +98,8 @@
  
      def tearDown(self):
@@ -450,3 +450,29 @@ Index: ceilometer/tests/test_service.py
 +            self._service_restart('ceilometer-agent-central')
 +        except:
 +            self.skipTest('Skipped by Ubuntu')
+Index: ceilometer/tests/api/v2/test_statistics_scenarios.py
+===================================================================
+--- ceilometer.orig/tests/api/v2/test_statistics_scenarios.py	2013-09-06 18:17:42.575494571 -0700
++++ ceilometer/tests/api/v2/test_statistics_scenarios.py	2013-09-06 18:18:31.943494124 -0700
+@@ -1234,15 +1234,17 @@
+     # tests.
+ 
+     scenarios = [
+-        ('mongodb',
+-         dict(database_connection=tests_db.MongoDBFakeConnectionUrl())),
+-        ('hbase', dict(database_connection='hbase://__test__')),
+-        ('db2', dict(database_connection=tests_db.DB2FakeConnectionUrl())),
++        # Test scenarios dropped by Ubuntu packaging.
++        #('mongodb',
++        # dict(database_connection=tests_db.MongoDBFakeConnectionUrl())),
++        #('hbase', dict(database_connection='hbase://__test__')),
++        #('db2', dict(database_connection=tests_db.DB2FakeConnectionUrl())),
+     ]
+ 
+     PATH = '/meters/instance/statistics'
+ 
+     def setUp(self):
++        self.skipTest('Skipped by Ubuntu Packaging.')
+         super(TestGroupBySource, self).setUp()
+ 
+         test_sample_data = (
