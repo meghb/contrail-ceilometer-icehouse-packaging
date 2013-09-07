@@ -1,4 +1,4 @@
-ceilometer (2013.2~b3-0ubuntu1) UNRELEASED; urgency=low
+ceilometer (2013.2~b3-0ubuntu1) saucy; urgency=low
 
   [ Chuck Short ]
   * New upstream release.
@@ -16,7 +16,7 @@ ceilometer (2013.2~b3-0ubuntu1) UNRELEASED; urgency=low
   * debian/rules: Clean python-pbr egg if it exists, set PYTHONPATH to build
     dir when running tests.
 
- -- Adam Gandelman <adamg@ubuntu.com>  Fri, 06 Sep 2013 15:52:35 -0700
+ -- Chuck Short <zulcss@ubuntu.com>  Sat, 07 Sep 2013 15:58:58 -0400
 
 ceilometer (2013.2~b2-0ubuntu4) saucy; urgency=low
 
