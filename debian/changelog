@@ -2,6 +2,7 @@ ceilometer (2013.2~b3-0ubuntu2) UNRELEASED; urgency=low
 
   * debian/patches/fix-setup-requirements.patch: Dropped no longer
     needed. 
+  * debian/patches/skip-database.patch: Refreshed
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 13 Sep 2013 09:24:21 -0400
 
