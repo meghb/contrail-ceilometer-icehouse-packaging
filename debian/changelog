@@ -3,6 +3,36 @@ ceilometer (2013.2~b3-0ubuntu2) UNRELEASED; urgency=low
   * debian/patches/fix-setup-requirements.patch: Dropped no longer
     needed. 
   * debian/patches/skip-database.patch: Refreshed
+  * debian/control: 
+    - Add versioned dependency for python-pbr.
+    - Bump version dependency for python-webob.
+    - Add versioned dependency for alembic.
+    - Bump versioned dependency for python-sqlalchemy.
+    - Add versioned dependency for python-pymongo.
+    - Add versioned dependency for python-eventlet.
+    - Dropped python-extras dependency.
+    - Bump versioned dependency for python-flask.
+    - Bump versioned dependency for python-stevedore.
+    - Add versioned dependency for python-glanceclient.
+    - Bump versioned dependency for python-novaclient.
+    - Bump versioned dependency for python-keystoneclient.
+    - Bump versioned dependency for python-ceilometerclient.
+    - Add versioned dependency for python-lxml.
+    - Bump versioned dependency for python-wsme.
+    - Dropped python-netifaces dependency.
+    - Added python-httplib2 build dependency.
+    - Bump versioned dependency for python-fixtures.
+    - Bump versioned dependency for testrepository.
+    - Added versioned dependency for python-testtools.
+    - Added versioned dependency for python-swiftclient.
+    - Dropped python-cinderclient dependency.
+    - Dropped python-lockfile dependency.
+    - Dropped python-setuptoools-git dependency.
+    - Dropped python-unittest2 dependency.
+    - Added versioned dependency for python-testtools.
+    - Added binary dependency for python-netaddr.
+    - Add python-six as a dependency.
+  * debian/patches/fix-setup-requirements.patch: Bump sqlachemy version.
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 13 Sep 2013 09:24:21 -0400
 
