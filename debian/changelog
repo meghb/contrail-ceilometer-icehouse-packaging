@@ -32,6 +32,7 @@ ceilometer (2013.2~b3-0ubuntu2) UNRELEASED; urgency=low
     - Added versioned dependency for python-testtools.
     - Added binary dependency for python-netaddr.
     - Add python-six as a dependency.
+  * debian/patches/fix-setup-requirements.patch: Bump sqlachemy version.
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 13 Sep 2013 09:24:21 -0400
 

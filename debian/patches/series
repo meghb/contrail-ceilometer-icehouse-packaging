@@ -1,2 +1,3 @@
 default-dbconnection-sqlite.patch
 skip-database-tests.patch
+fix-setup-requirements.patch
