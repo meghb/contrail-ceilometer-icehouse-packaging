@@ -29,7 +29,7 @@ Build-Depends:
  python-netaddr,
  python-nova,
  python-novaclient (>= 1:2.12.10),
- python-oslo.config (>= 1:1.2.0a3),
+ python-oslo.config (>= 1:1.2.0),
  python-oslo.sphinx,
  python-pbr (>= 0.5.21),
  python-pecan (>= 0.2.0),

@@ -3,7 +3,7 @@ etc/ceilometer/pipeline.yaml etc/ceilometer
 etc/ceilometer/policy.json etc/ceilometer
 etc/ceilometer/sources.json etc/ceilometer
 tools/show_data.py usr/share/doc/ceilometer
+usr/bin/ceilometer-alarm-evaluator
 usr/bin/ceilometer-alarm-notifier
-usr/bin/ceilometer-alarm-singleton
 usr/bin/ceilometer-dbsync
 usr/bin/ceilometer-expirer
