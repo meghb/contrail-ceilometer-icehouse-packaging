@@ -1,8 +1,8 @@
-Index: upstream/ceilometer/tests/db.py
-===================================================================
---- upstream.orig/ceilometer/tests/db.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/ceilometer/tests/db.py	2013-09-27 11:16:25.353799203 -0700
-@@ -41,8 +41,8 @@
+diff --git a/ceilometer/tests/db.py b/ceilometer/tests/db.py
+index 6a767cf..58f2539 100644
+--- a/ceilometer/tests/db.py
++++ b/ceilometer/tests/db.py
+@@ -41,8 +41,8 @@ class TestBase(test_base.TestCase):
                  message='.*you must provide a username and password.*')
              try:
                  self.conn = storage.get_connection(cfg.CONF)
@@ -13,7 +13,7 @@ Index: upstream/ceilometer/tests/db.py
          self.conn.upgrade()
  
      def tearDown(self):
-@@ -56,9 +56,7 @@
+@@ -56,9 +56,7 @@ class MongoDBFakeConnectionUrl(object):
      def __init__(self):
          self.url = os.environ.get('CEILOMETER_TEST_MONGODB_URL')
          if not self.url:
@@ -24,7 +24,7 @@ Index: upstream/ceilometer/tests/db.py
  
      def __str__(self):
          return '%(url)s_%(db)s' % dict(url=self.url, db=uuid.uuid4().hex)
-@@ -83,7 +81,4 @@
+@@ -83,7 +81,4 @@ class MixinTestsWithBackendScenarios(object):
  
      scenarios = [
          ('sqlalchemy', dict(database_connection='sqlite://')),
@@ -32,11 +32,11 @@ Index: upstream/ceilometer/tests/db.py
 -        ('hbase', dict(database_connection='hbase://__test__')),
 -        ('db2', dict(database_connection=DB2FakeConnectionUrl())),
      ]
-Index: upstream/tests/agentbase.py
-===================================================================
---- upstream.orig/tests/agentbase.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/agentbase.py	2013-09-27 11:16:25.357799203 -0700
-@@ -174,7 +174,10 @@
+diff --git a/tests/agentbase.py b/tests/agentbase.py
+index 383b8e7..23d6f65 100644
+--- a/tests/agentbase.py
++++ b/tests/agentbase.py
+@@ -175,7 +175,10 @@ class BaseAgentManagerTestCase(base.TestCase):
          self.assertEqual(len(polling_tasks), 1)
          self.assertTrue(60 in polling_tasks.keys())
          self.mgr.interval_task(polling_tasks.values()[0])
@@ -48,7 +48,7 @@ Index: upstream/tests/agentbase.py
          self.assertEqual(pub.samples[0], self.Pollster.test_data)
  
      def test_setup_polling_tasks_multiple_interval(self):
-@@ -243,7 +246,10 @@
+@@ -244,7 +247,10 @@ class BaseAgentManagerTestCase(base.TestCase):
          self.assertEqual(len(polling_tasks.keys()), 1)
          polling_tasks.get(10)
          self.mgr.interval_task(polling_tasks.get(10))
@@ -59,12 +59,12 @@ Index: upstream/tests/agentbase.py
 +            self.skipTest("Skipped by Ubuntu")
          self.assertEqual(len(pub.samples), 0)
  
-     def test_manager_exception_persistency(self):
-Index: upstream/tests/alarm/test_notifier.py
-===================================================================
---- upstream.orig/tests/alarm/test_notifier.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/alarm/test_notifier.py	2013-09-27 11:16:25.357799203 -0700
-@@ -58,7 +58,10 @@
+     def test_agent_manager_initialize_service_hook(self):
+diff --git a/tests/alarm/test_notifier.py b/tests/alarm/test_notifier.py
+index 3d71b75..46ea1aa 100644
+--- a/tests/alarm/test_notifier.py
++++ b/tests/alarm/test_notifier.py
+@@ -58,7 +58,10 @@ class TestAlarmNotifier(base.TestCase):
              'reason': 'Everything is on fire',
          }
          self.service.notify_alarm(context.get_admin_context(), data)
@@ -76,7 +76,7 @@ Index: upstream/tests/alarm/test_notifier.py
          self.assertEqual(len(notifications), 1)
          self.assertEqual(notifications[0], (
              urlparse.urlsplit(data['actions'][0]),
-@@ -90,6 +93,7 @@
+@@ -90,6 +93,7 @@ class TestAlarmNotifier(base.TestCase):
          return notification
  
      def test_notify_alarm_rest_action_ok(self):
@@ -84,7 +84,7 @@ Index: upstream/tests/alarm/test_notifier.py
          action = 'http://host/action'
  
          with mock.patch('eventlet.spawn_n', self._fake_spawn_n):
-@@ -102,8 +106,11 @@
+@@ -102,8 +106,11 @@ class TestAlarmNotifier(base.TestCase):
          action = 'https://host/action'
          certificate = "/etc/ssl/cert/whatever.pem"
  
@@ -98,7 +98,7 @@ Index: upstream/tests/alarm/test_notifier.py
  
          with mock.patch('eventlet.spawn_n', self._fake_spawn_n):
              with mock.patch.object(requests, 'post') as poster:
-@@ -117,10 +124,13 @@
+@@ -117,10 +124,13 @@ class TestAlarmNotifier(base.TestCase):
          certificate = "/etc/ssl/cert/whatever.pem"
          key = "/etc/ssl/cert/whatever.key"
  
@@ -116,7 +116,7 @@ Index: upstream/tests/alarm/test_notifier.py
  
          with mock.patch('eventlet.spawn_n', self._fake_spawn_n):
              with mock.patch.object(requests, 'post') as poster:
-@@ -132,8 +142,11 @@
+@@ -132,8 +142,11 @@ class TestAlarmNotifier(base.TestCase):
      def test_notify_alarm_rest_action_with_ssl_verify_disable_by_cfg(self):
          action = 'https://host/action'
  
@@ -130,7 +130,7 @@ Index: upstream/tests/alarm/test_notifier.py
  
          with mock.patch('eventlet.spawn_n', self._fake_spawn_n):
              with mock.patch.object(requests, 'post') as poster:
-@@ -143,6 +156,7 @@
+@@ -143,6 +156,7 @@ class TestAlarmNotifier(base.TestCase):
                                            verify=False)
  
      def test_notify_alarm_rest_action_with_ssl_verify_disable(self):
@@ -138,7 +138,7 @@ Index: upstream/tests/alarm/test_notifier.py
          action = 'https://host/action?ceilometer-alarm-ssl-verify=0'
  
          with mock.patch('eventlet.spawn_n', self._fake_spawn_n):
-@@ -155,8 +169,11 @@
+@@ -155,8 +169,11 @@ class TestAlarmNotifier(base.TestCase):
      def test_notify_alarm_rest_action_with_ssl_verify_enable_by_user(self):
          action = 'https://host/action?ceilometer-alarm-ssl-verify=1'
  
@@ -152,11 +152,11 @@ Index: upstream/tests/alarm/test_notifier.py
  
          with mock.patch('eventlet.spawn_n', self._fake_spawn_n):
              with mock.patch.object(requests, 'post') as poster:
-Index: upstream/tests/api/v1/test_compute_duration_by_resource_scenarios.py
-===================================================================
---- upstream.orig/tests/api/v1/test_compute_duration_by_resource_scenarios.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/api/v1/test_compute_duration_by_resource_scenarios.py	2013-09-27 11:16:25.357799203 -0700
-@@ -85,7 +85,10 @@
+diff --git a/tests/api/v1/test_compute_duration_by_resource_scenarios.py b/tests/api/v1/test_compute_duration_by_resource_scenarios.py
+index 775b890..5a2d26a 100644
+--- a/tests/api/v1/test_compute_duration_by_resource_scenarios.py
++++ b/tests/api/v1/test_compute_duration_by_resource_scenarios.py
+@@ -85,7 +85,10 @@ class TestComputeDurationByResource(tests_api.TestBase,
          assert data['duration'] is None
  
      def _assert_times_match(self, actual, expected):
@@ -168,11 +168,11 @@ Index: upstream/tests/api/v1/test_compute_duration_by_resource_scenarios.py
          assert actual == expected
  
      def test_overlap_range_start(self):
-Index: upstream/tests/api/v2/test_app.py
-===================================================================
---- upstream.orig/tests/api/v2/test_app.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/api/v2/test_app.py	2013-09-27 11:16:25.357799203 -0700
-@@ -45,7 +45,10 @@
+diff --git a/tests/api/v2/test_app.py b/tests/api/v2/test_app.py
+index 8033891..f2a0ac2 100644
+--- a/tests/api/v2/test_app.py
++++ b/tests/api/v2/test_app.py
+@@ -45,7 +45,10 @@ class TestApp(base.TestCase):
          cfg.CONF.set_override("pipeline_cfg_file",
                                self.path_get("etc/ceilometer/pipeline.yaml"))
          cfg.CONF.set_override('connection', "log://", group="database")
@@ -184,7 +184,7 @@ Index: upstream/tests/api/v2/test_app.py
          self.assertEqual(api_app.auth_protocol, 'foottp')
  
      def test_keystone_middleware_parse_conffile(self):
-@@ -60,7 +63,10 @@
+@@ -60,7 +63,10 @@ class TestApp(base.TestCase):
          service.prepare_service(['ceilometer-api',
                                   '--config-file=%s' % tmpfile])
          cfg.CONF.set_override('connection', "log://", group="database")
@@ -196,11 +196,11 @@ Index: upstream/tests/api/v2/test_app.py
          self.assertEqual(api_app.auth_protocol, 'barttp')
          os.unlink(tmpfile)
  
-Index: upstream/tests/api/v2/test_statistics_scenarios.py
-===================================================================
---- upstream.orig/tests/api/v2/test_statistics_scenarios.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/api/v2/test_statistics_scenarios.py	2013-09-27 11:16:25.357799203 -0700
-@@ -1234,15 +1234,17 @@
+diff --git a/tests/api/v2/test_statistics_scenarios.py b/tests/api/v2/test_statistics_scenarios.py
+index 61d05d7..081a1f9 100644
+--- a/tests/api/v2/test_statistics_scenarios.py
++++ b/tests/api/v2/test_statistics_scenarios.py
+@@ -1234,15 +1234,17 @@ class TestGroupBySource(base.FunctionalTest,
      # tests.
  
      scenarios = [
@@ -222,11 +222,11 @@ Index: upstream/tests/api/v2/test_statistics_scenarios.py
          super(TestGroupBySource, self).setUp()
  
          test_sample_data = (
-Index: upstream/tests/collector/dispatcher/test_db.py
-===================================================================
---- upstream.orig/tests/collector/dispatcher/test_db.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/collector/dispatcher/test_db.py	2013-09-27 11:16:25.357799203 -0700
-@@ -30,7 +30,10 @@
+diff --git a/tests/collector/dispatcher/test_db.py b/tests/collector/dispatcher/test_db.py
+index a538a5d..7ca68ed 100644
+--- a/tests/collector/dispatcher/test_db.py
++++ b/tests/collector/dispatcher/test_db.py
+@@ -30,7 +30,10 @@ class TestDispatcherDB(tests_base.TestCase):
  
      def setUp(self):
          super(TestDispatcherDB, self).setUp()
@@ -238,11 +238,11 @@ Index: upstream/tests/collector/dispatcher/test_db.py
          self.ctx = None
  
      def test_valid_message(self):
-Index: upstream/tests/collector/test_service.py
-===================================================================
---- upstream.orig/tests/collector/test_service.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/collector/test_service.py	2013-09-27 11:16:25.357799203 -0700
-@@ -114,7 +114,10 @@
+diff --git a/tests/collector/test_service.py b/tests/collector/test_service.py
+index 0bc94da..7c3c560 100644
+--- a/tests/collector/test_service.py
++++ b/tests/collector/test_service.py
+@@ -114,7 +114,10 @@ class TestUDPCollectorService(TestCollector):
  
      def setUp(self):
          super(TestUDPCollectorService, self).setUp()
@@ -254,7 +254,7 @@ Index: upstream/tests/collector/test_service.py
          self.counter = sample.Sample(
              name='foobar',
              type='bad',
-@@ -189,7 +192,10 @@
+@@ -189,7 +192,10 @@ class TestCollectorService(TestCollector):
  
      def setUp(self):
          super(TestCollectorService, self).setUp()
@@ -266,7 +266,7 @@ Index: upstream/tests/collector/test_service.py
          self.ctx = None
  
      @patch('ceilometer.pipeline.setup_pipeline', MagicMock())
-@@ -197,8 +203,11 @@
+@@ -197,8 +203,11 @@ class TestCollectorService(TestCollector):
          # If we try to create a real RPC connection, init_host() never
          # returns. Mock it out so we can establish the service
          # configuration.
@@ -280,7 +280,7 @@ Index: upstream/tests/collector/test_service.py
  
      @patch('ceilometer.pipeline.setup_pipeline', MagicMock())
      def test_process_notification(self):
-@@ -206,8 +215,11 @@
+@@ -206,8 +215,11 @@ class TestCollectorService(TestCollector):
          # returns. Mock it out so we can establish the service
          # configuration.
          cfg.CONF.set_override("store_events", False, group="collector")
@@ -294,11 +294,11 @@ Index: upstream/tests/collector/test_service.py
          self.srv.pipeline_manager.pipelines[0] = MagicMock()
          self.srv.notification_manager = test_manager.TestExtensionManager(
              [extension.Extension('test',
-Index: upstream/tests/compute/pollsters/test_location_metadata.py
-===================================================================
---- upstream.orig/tests/compute/pollsters/test_location_metadata.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/compute/pollsters/test_location_metadata.py	2013-09-27 11:16:25.357799203 -0700
-@@ -47,7 +47,10 @@
+diff --git a/tests/compute/pollsters/test_location_metadata.py b/tests/compute/pollsters/test_location_metadata.py
+index a14ddfc..60619b5 100644
+--- a/tests/compute/pollsters/test_location_metadata.py
++++ b/tests/compute/pollsters/test_location_metadata.py
+@@ -47,7 +47,10 @@ class TestLocationMetadata(test_base.TestCase):
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
      def setUp(self):
@@ -310,11 +310,11 @@ Index: upstream/tests/compute/pollsters/test_location_metadata.py
          super(TestLocationMetadata, self).setUp()
  
          # Mimics an instance returned from nova api call
-Index: upstream/tests/compute/test_manager.py
-===================================================================
---- upstream.orig/tests/compute/test_manager.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/compute/test_manager.py	2013-09-27 11:16:25.357799203 -0700
-@@ -29,7 +29,10 @@
+diff --git a/tests/compute/test_manager.py b/tests/compute/test_manager.py
+index b3f3b3d..8e28a50 100644
+--- a/tests/compute/test_manager.py
++++ b/tests/compute/test_manager.py
+@@ -29,7 +29,10 @@ class TestManager(base.TestCase):
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
      def test_load_plugins(self):
@@ -326,7 +326,7 @@ Index: upstream/tests/compute/test_manager.py
          self.assertIsNotNone(list(mgr.pollster_manager))
  
  
-@@ -45,7 +48,10 @@
+@@ -45,7 +48,10 @@ class TestRunTasks(agentbase.BaseAgentManagerTestCase):
          raise Exception
  
      def setup_manager(self):
@@ -338,11 +338,11 @@ Index: upstream/tests/compute/test_manager.py
  
      @mock.patch('ceilometer.pipeline.setup_pipeline', mock.MagicMock())
      def setUp(self):
-Index: upstream/tests/storage/test_get_engine.py
-===================================================================
---- upstream.orig/tests/storage/test_get_engine.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/storage/test_get_engine.py	2013-09-27 11:16:25.357799203 -0700
-@@ -31,7 +31,10 @@
+diff --git a/tests/storage/test_get_engine.py b/tests/storage/test_get_engine.py
+index 498b6f4..4824461 100644
+--- a/tests/storage/test_get_engine.py
++++ b/tests/storage/test_get_engine.py
+@@ -31,7 +31,10 @@ class EngineTest(testtools.TestCase):
          conf = mox.Mox().CreateMockAnything()
          conf.database = mox.Mox().CreateMockAnything()
          conf.database.connection = 'log://localhost'
@@ -354,11 +354,11 @@ Index: upstream/tests/storage/test_get_engine.py
          self.assertIsInstance(engine, impl_log.LogStorage)
  
      def test_get_engine_no_such_engine(self):
-Index: upstream/tests/test_bin.py
-===================================================================
---- upstream.orig/tests/test_bin.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/test_bin.py	2013-09-27 11:16:25.361799203 -0700
-@@ -36,14 +36,20 @@
+diff --git a/tests/test_bin.py b/tests/test_bin.py
+index a358b57..bc2cd2a 100644
+--- a/tests/test_bin.py
++++ b/tests/test_bin.py
+@@ -36,14 +36,20 @@ class BinTestCase(base.TestCase):
              tmp.write("connection=log://localhost\n")
  
      def test_dbsync_run(self):
@@ -385,7 +385,7 @@ Index: upstream/tests/test_bin.py
  
  
  class BinSendCounterTestCase(base.TestCase):
-@@ -59,11 +65,14 @@
+@@ -59,11 +65,14 @@ class BinSendCounterTestCase(base.TestCase):
                  "pipeline_cfg_file=%s\n" % pipeline_cfg_file)
  
      def test_send_counter_run(self):
@@ -405,7 +405,7 @@ Index: upstream/tests/test_bin.py
  
  
  class BinApiTestCase(base.TestCase):
-@@ -92,8 +101,11 @@
+@@ -92,8 +101,11 @@ class BinApiTestCase(base.TestCase):
                  "port=%s\n" % self.api_port)
              tmp.write("[database]\n")
              tmp.write("connection=log://localhost\n")
@@ -419,11 +419,11 @@ Index: upstream/tests/test_bin.py
  
      def tearDown(self):
          super(BinApiTestCase, self).tearDown()
-Index: upstream/tests/test_notifier.py
-===================================================================
---- upstream.orig/tests/test_notifier.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/test_notifier.py	2013-09-27 11:16:25.361799203 -0700
-@@ -80,7 +80,10 @@
+diff --git a/tests/test_notifier.py b/tests/test_notifier.py
+index 814dca1..9a659fb 100644
+--- a/tests/test_notifier.py
++++ b/tests/test_notifier.py
+@@ -80,7 +80,10 @@ class TestNotifier(tests_base.TestCase):
              }],
              transformer_manager)
  
@@ -435,11 +435,11 @@ Index: upstream/tests/test_notifier.py
          self.assertEqual(len(pub.samples), 0)
          notifier.notify(None, MESSAGE)
          self.assertTrue(len(pub.samples) > 0)
-Index: upstream/tests/test_service.py
-===================================================================
---- upstream.orig/tests/test_service.py	2013-09-27 11:16:25.365799203 -0700
-+++ upstream/tests/test_service.py	2013-09-27 11:16:25.361799203 -0700
-@@ -98,8 +98,8 @@
+diff --git a/tests/test_service.py b/tests/test_service.py
+index 65580b6..8497648 100644
+--- a/tests/test_service.py
++++ b/tests/test_service.py
+@@ -98,8 +98,8 @@ class ServiceRestartTest(base.TestCase):
  
      def tearDown(self):
          super(ServiceRestartTest, self).tearDown()
@@ -450,7 +450,7 @@ Index: upstream/tests/test_service.py
  
      @staticmethod
      def _check_process_alive(pid):
-@@ -143,7 +143,10 @@
+@@ -143,7 +143,10 @@ class ServiceRestartTest(base.TestCase):
          self.check_process_alive()
  
      def _service_restart(self, cmd):
@@ -462,7 +462,7 @@ Index: upstream/tests/test_service.py
  
          self.assertTrue(self.sub.pid)
          #NOTE(Fengqian): Modify the pipleline configure file to see
-@@ -159,7 +162,13 @@
+@@ -159,7 +162,13 @@ class ServiceRestartTest(base.TestCase):
                            self.parse_output("Pipeline config: ").ret_stream))
  
      def test_compute_service_restart(self):
