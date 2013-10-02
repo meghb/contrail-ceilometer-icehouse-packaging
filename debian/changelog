@@ -1,4 +1,4 @@
-ceilometer (2013.2~rc1-0ubuntu1) saucy; urgency=low
+ceilometer (2013.2~rc1-0ubuntu1) UNRELEASED; urgency=low
 
   * debian/patches/fix-setup-requirements.patch: Dropped no longer
     needed.
