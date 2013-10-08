@@ -1,3 +1,9 @@
+ceilometer (2013.2~rc1-0ubuntu2) UNRELEASED; urgency=low
+
+  * d/control: Drop a3 from versioned dependency on python-oslo.config.
+
+ -- James Page <james.page@ubuntu.com>  Tue, 08 Oct 2013 16:55:40 +0100
+
 ceilometer (2013.2~rc1-0ubuntu1) saucy; urgency=low
 
   * debian/patches/fix-setup-requirements.patch: Dropped no longer

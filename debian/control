@@ -70,7 +70,7 @@ Depends:
  python-migrate,
  python-netaddr,
  python-novaclient (>= 1:2.12.10),
- python-oslo.config (>= 1:1.2.0a3),
+ python-oslo.config (>= 1:1.2.0),
  python-pecan (>= 0.2.0),
  python-pymongo (>= 2.6),
  python-six,
