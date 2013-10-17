@@ -1,6 +1,6 @@
 ceilometer (2013.2-0ubuntu1) UNRELEASED; urgency=low
 
-  * New upstream release.
+  * New upstream release (LP: #1236462).
 
  -- Chuck Short <zulcss@ubuntu.com>  Wed, 16 Oct 2013 09:20:13 -0400
 
