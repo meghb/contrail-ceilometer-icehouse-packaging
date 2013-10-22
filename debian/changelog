@@ -1,3 +1,9 @@
+ceilometer (2013.2-0ubuntu2) UNRELEASED; urgency=low
+
+  * debian/control: open icehouse release.
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 22 Oct 2013 09:54:00 -0700
+
 ceilometer (2013.2-0ubuntu1) saucy; urgency=low
 
   * New upstream release (LP: #1236462).
