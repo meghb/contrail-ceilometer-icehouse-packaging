@@ -2,7 +2,7 @@ ceilometer (2013.2-0ubuntu3) UNRELEASED; urgency=low
 
   * debian/control:
     - Open icehouse release.
-    - Renmaed msgpack-python to python-msgpack.
+    - Renamed msgpack-python to python-msgpack.
     - Bump build dependency version for python-ceilometerclient,
       python-novaclient, python-keystoneclient, python-six,
       python-wsme.
