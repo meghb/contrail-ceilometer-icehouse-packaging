@@ -1,8 +1,16 @@
-ceilometer (2013.2-0ubuntu2) UNRELEASED; urgency=low
+ceilometer (2013.2-0ubuntu3) UNRELEASED; urgency=low
 
-  * debian/control: open icehouse release.
+  * debian/control:
+    - Open icehouse release.
+    - Renmaed msgpack-python to python-msgpack.
+    - Bump build dependency version for python-ceilometerclient,
+      python-novaclient, python-keystoneclient, python-six,
+      python-wsme.
+  * debian/patches/fix-setup-requirements.patch: Refreshed.
+  * debian/patches/skip-database-tests.patch: Refreshed.
+  * debian/rules: Temporarily disable testsuite.
 
- -- Chuck Short <zulcss@ubuntu.com>  Tue, 22 Oct 2013 09:54:00 -0700
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 25 Nov 2013 09:25:56 -0500
 
 ceilometer (2013.2-0ubuntu1) saucy; urgency=low
 
