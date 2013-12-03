@@ -4,12 +4,19 @@ Forwarded: No
 diff -Naurp ceilometer-2014.1.dev158.gb866499.orig/requirements.txt ceilometer-2014.1.dev158.gb866499/requirements.txt
 --- ceilometer-2014.1.dev158.gb866499.orig/requirements.txt	2013-11-25 09:20:12.000000000 -0500
 +++ ceilometer-2014.1.dev158.gb866499/requirements.txt	2013-11-25 09:39:01.527099908 -0500
-@@ -3,7 +3,7 @@ WebOb>=1.2.3,<1.3
+@@ -1,12 +1,12 @@
+ pbr>=0.5.21,<1.0
+ WebOb>=1.2.3,<1.3
  kombu>=2.4.8
- iso8601>=0.1.8
+-iso8601>=0.1.4
++iso8601>=0.1.8
  argparse
 -SQLAlchemy>=0.7.8,<=0.7.99
 +SQLAlchemy>=0.7.8,<=0.8.99
  sqlalchemy-migrate>=0.7.2
  alembic>=0.4.1
- netaddr>=0.7.6
+-netaddr
++netaddr>=0.7.6
+ pymongo>=2.4
+ eventlet>=0.13.0
+ anyjson>=0.3.3
