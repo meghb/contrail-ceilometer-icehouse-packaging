@@ -1,5 +1,6 @@
 ceilometer (2013.2-0ubuntu3) UNRELEASED; urgency=low
 
+  [ Chuck Short ]
   * debian/control:
     - Open icehouse release.
     - Renamed msgpack-python to python-msgpack.
@@ -10,7 +11,10 @@ ceilometer (2013.2-0ubuntu3) UNRELEASED; urgency=low
   * debian/patches/skip-database-tests.patch: Refreshed.
   * debian/rules: Temporarily disable testsuite.
 
- -- Chuck Short <zulcss@ubuntu.com>  Mon, 25 Nov 2013 09:25:56 -0500
+  [ Yolanda Robla ]
+  * debian/patches/fix-setup-requirements.patch: Refreshed.
+
+ -- Yolanda Robla <yolanda.robla@canonical.com>  Tue, 03 Dec 2013 16:21:56 +0100
 
 ceilometer (2013.2-0ubuntu1) saucy; urgency=low
 
