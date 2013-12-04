@@ -3,7 +3,7 @@
 # Testing ceilometer-daemons
 #---------------------------
 set -e
-DAEMONS=('ceilometer-collector' 'ceilometer-api' 'ceilometer-agent-compute' 'ceilometer-agent-central')
+DAEMONS=('ceilometer-collector' 'ceilometer-api' 'ceilometer-agent-compute' 'ceilometer-agent-central', 'ceilometer-agent-notification')
 
 for daemon in "${DAEMONS[@]}"; do
     if pidof -x $daemon > /dev/null; then

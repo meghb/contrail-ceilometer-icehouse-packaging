@@ -13,6 +13,13 @@ ceilometer (2013.2-0ubuntu3) UNRELEASED; urgency=low
 
   [ Yolanda Robla ]
   * debian/patches/fix-setup-requirements.patch: Refreshed.
+  * debian/patches/default-dbconnection-sqlite.patch: Refreshed
+  * debian/ceilometer-collector.install: Removed usr/bin/ceilometer-collector-udp
+  * Added ceilometer-agent-notification package:
+    - debian/control: added ceilometer-agent-notification package
+    - debian/ceilometer-agent-notification.*: added install, postrc, upstart
+    - debian/tests: added ceilometer-agent-notification to tests
+  * debian/control: updated build-depends and depends versions
 
  -- Yolanda Robla <yolanda.robla@canonical.com>  Tue, 03 Dec 2013 16:21:56 +0100
 
