@@ -1,4 +1,4 @@
-ceilometer (2013.2-0ubuntu3) UNRELEASED; urgency=low
+ceilometer (2013.2+master-0ubuntu1) UNRELEASED; urgency=low
 
   [ Chuck Short ]
   * debian/control:
@@ -13,6 +13,16 @@ ceilometer (2013.2-0ubuntu3) UNRELEASED; urgency=low
 
   [ Yolanda Robla ]
   * debian/patches/fix-setup-requirements.patch: Refreshed.
+  * debian/patches/default-dbconnection-sqlite.patch: Refreshed
+  * debian/ceilometer-collector.install: Removed usr/bin/ceilometer-collector-udp
+  * Added ceilometer-agent-notification package:
+    - debian/control: added ceilometer-agent-notification package
+    - debian/ceilometer-agent-notification.*: added install, upstart
+    - debian/tests: added ceilometer-agent-notification to tests
+  * debian/control: updated build-depends and depends versions
+
+  [ James Page ]
+  * debian/control: Add missing BD on python-mysqldb.
 
  -- Yolanda Robla <yolanda.robla@canonical.com>  Tue, 03 Dec 2013 16:21:56 +0100
 
