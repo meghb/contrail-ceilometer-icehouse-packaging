@@ -1,3 +1,10 @@
+ceilometer (2014.1~b1+master-0ubuntu1) UNRELEASED; urgency=medium
+
+  * d/control: Add python-jsonpath-rw to BD's.
+  * d/p/fix-setup-requirements.patch: Bump WebOb to support < 1.4.
+
+ -- James Page <james.page@ubuntu.com>  Tue, 17 Dec 2013 15:43:07 +0000
+
 ceilometer (2014.1~b1-0ubuntu1) trusty; urgency=low
 
   [ Chuck Short ]
