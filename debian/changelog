@@ -12,8 +12,9 @@ ceilometer (2014.1~b1+master-0ubuntu1) UNRELEASED; urgency=medium
   * debian/ceilometer-agent-central.logrotate,
     debian/ceilometer-agent-compute.logrotate,
     debian/ceilometer-api.logrotate,
-    debian/ceilometer-collector.logrotate: Add logroate files, 
-    thanks to Mathieu Gagne. (LP: #1224223)
+    debian/ceilometer-collector.logrotate: Add logrotate files, 
+    thanks to Ahmed Rahal. (LP: #1224223)
+  * Fix typos in upstart files.
 
  -- James Page <james.page@ubuntu.com>  Tue, 17 Dec 2013 15:43:07 +0000
 

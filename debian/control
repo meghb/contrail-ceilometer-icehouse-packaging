@@ -216,7 +216,7 @@ Depends:
  ceilometer-common (= ${binary:Version}),
  ${misc:Depends},
  ${python:Depends}
-Description: ceilometer alarm evaluator
+Description: Ceilometer alarm evaluator
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all
  current and future OpenStack components. The delivery of counters must
@@ -234,7 +234,7 @@ Depends:
  ceilometer-common (= ${binary:Version}),
  ${misc:Depends},
  ${python:Depends}
-Description: ceilometer notification agent
+Description: Ceilometer notification agent
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all
  current and future OpenStack components. The delivery of counters must
