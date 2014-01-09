@@ -1,7 +1,19 @@
 ceilometer (2014.1~b1+master-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ James Page ]
   * d/control: Add python-jsonpath-rw to BD's.
   * d/p/fix-setup-requirements.patch: Bump WebOb to support < 1.4.
+   (LP: #1261101)
+
+  [ Chuck Short ]
+  * debian/control, debian/ceilometer-common.install: Split out
+    ceilometer-alarm-evaluator and ceilometer-alarm-notifier into their
+    own packages. (LP: #1250002)
+  * debian/ceilometer-agent-central.logrotate,
+    debian/ceilometer-agent-compute.logrotate,
+    debian/ceilometer-api.logrotate,
+    debian/ceilometer-collector.logrotate: Add logroate files, 
+    thanks to Mathieu Gagne. (LP: #1224223)
 
  -- James Page <james.page@ubuntu.com>  Tue, 17 Dec 2013 15:43:07 +0000
 
