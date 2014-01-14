@@ -209,3 +209,41 @@ Description: ceilometer notification agent
  (A ceilometer is an instrument that measures cloud coverage.)
  .
  This package contains the notificaiton agent.
+
+Package: ceilometer-alarm-evaluator
+Architecture: all
+Depends:
+ ceilometer-common (= ${binary:Version}),
+ ${misc:Depends},
+ ${python:Depends}
+Description: Ceilometer alarm evaluator
+ Ceilometer aims to deliver a unique point of contact for billing systems to
+ aquire all counters they need to establish  customer billing, accross all
+ current and future OpenStack components. The delivery of counters must
+ be tracable and auditable, the counters must be easily extensible to support
+ new projects, and agents doing data collections should be
+ independent of the overall system.
+ .
+ (A ceilometer is an instrument that measures cloud coverage.)
+ .
+ This package contains the alarm evaluator daemon.
+
+Package: ceilometer-alarm-notifier
+Architecture: all
+Depends:
+ ceilometer-common (= ${binary:Version}),
+ ${misc:Depends},
+ ${python:Depends}
+Description: Ceilometer notification agent
+ Ceilometer aims to deliver a unique point of contact for billing systems to
+ aquire all counters they need to establish  customer billing, accross all
+ current and future OpenStack components. The delivery of counters must
+ be tracable and auditable, the counters must be easily extensible to support
+ new projects, and agents doing data collections should be
+ independent of the overall system.
+ .
+ (A ceilometer is an instrument that measures cloud coverage.)
+ .
+ This package contains the arlarm notifier daemon.
+
+
