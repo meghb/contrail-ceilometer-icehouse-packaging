@@ -1,4 +1,4 @@
-ceilometer (2014.1~b1+master-0ubuntu1) UNRELEASED; urgency=medium
+ceilometer (2014.1~b2-0ubuntu1) trusty; urgency=medium
 
   [ James Page ]
   * d/control: Add python-jsonpath-rw to BD's.
@@ -6,6 +6,7 @@ ceilometer (2014.1~b1+master-0ubuntu1) UNRELEASED; urgency=medium
    (LP: #1261101)
 
   [ Chuck Short ]
+  * New upstream version.
   * debian/control, debian/ceilometer-common.install: Split out
     ceilometer-alarm-evaluator and ceilometer-alarm-notifier into their
     own packages. (LP: #1250002)
@@ -16,7 +17,7 @@ ceilometer (2014.1~b1+master-0ubuntu1) UNRELEASED; urgency=medium
     thanks to Ahmed Rahal. (LP: #1224223)
   * Fix typos in upstart files.
 
- -- James Page <james.page@ubuntu.com>  Tue, 17 Dec 2013 15:43:07 +0000
+ -- Chuck Short <zulcss@ubuntu.com>  Thu, 23 Jan 2014 15:08:11 -0500
 
 ceilometer (2014.1~b1-0ubuntu1) trusty; urgency=low
 
