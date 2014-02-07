@@ -40,7 +40,7 @@ Build-Depends:
  python-simplejson,
  python-sphinx,
  python-sqlalchemy (>= 0.8.2),
- python-stevedore (>= 0.12),
+ python-stevedore (>= 0.13),
  python-subunit,
  python-six (>= 1.4.1),
  python-swift,

@@ -13,7 +13,9 @@ get-orig-source:
 
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 override_dh_auto_test:
+	patch -p1 -R < debian/patches/default-dbconnection-sqlite.patch
 	testr init && PYTHONPATH="$(CURDIR)" testr run || true
+	patch -p1 < debian/patches/default-dbconnection-sqlite.patch
 endif
 
 override_dh_install:
