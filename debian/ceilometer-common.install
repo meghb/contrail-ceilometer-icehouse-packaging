@@ -5,3 +5,4 @@ etc/ceilometer/sources.json etc/ceilometer
 tools/show_data.py usr/share/doc/ceilometer
 usr/bin/ceilometer-dbsync
 usr/bin/ceilometer-expirer
+usr/bin/ceilometer-send-sample

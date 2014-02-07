@@ -6,6 +6,7 @@ ceilometer (2014.1~b2-0ubuntu2) UNRELEASED; urgency=medium
   * debian/patches/skip-database-tests.patch: Dropped no longer needed.
   * debian/patches/revert-keystone-compat.patch: Dropped no longer needed.
   * debian/control: Bump python-stevedore to 0.13.
+  * debian/cielometer-common.install: Add ceilometer-sample
 
  -- Chuck Short <zulcss@ubuntu.com>  Fri, 07 Feb 2014 09:05:32 -0500
 
