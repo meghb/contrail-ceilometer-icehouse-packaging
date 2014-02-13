@@ -1,6 +1,7 @@
-diff -Naurp ceilometer-2014.1.dev96.gbce0327.orig/etc/ceilometer/ceilometer.conf.sample ceilometer-2014.1.dev96.gbce0327/etc/ceilometer/ceilometer.conf.sample
---- ceilometer-2014.1.dev96.gbce0327.orig/etc/ceilometer/ceilometer.conf.sample	2014-02-07 09:05:52.000000000 -0500
-+++ ceilometer-2014.1.dev96.gbce0327/etc/ceilometer/ceilometer.conf.sample	2014-02-07 09:16:53.428480974 -0500
+diff --git a/etc/ceilometer/ceilometer.conf.sample b/etc/ceilometer/ceilometer.conf.sample
+index 80964a7..7668dea 100644
+--- a/etc/ceilometer/ceilometer.conf.sample
++++ b/etc/ceilometer/ceilometer.conf.sample
 @@ -126,7 +126,7 @@
  #
  
@@ -18,7 +19,7 @@ diff -Naurp ceilometer-2014.1.dev96.gbce0327.orig/etc/ceilometer/ceilometer.conf
 +#Options defined in ceilometer.openstack.common.lockutils
  #
  
- # Whether to disable inter-process locks (boolean value)
+ # Whether to disable inter-process locks. (boolean value)
 @@ -598,7 +598,7 @@
  
  # The backend to use for db (string value)
