@@ -9,6 +9,7 @@ Build-Depends:
  python-anyjson (>= 0.3.3),
  python-babel (>= 0.9.6),
  python-ceilometerclient (>= 1.0.6),
+ python-croniter,
  python-coverage,
  python-docutils,
  python-eventlet (>= 0.13.0),
@@ -87,6 +88,7 @@ Depends:
  python-wsme (>= 0.5b6),
  ${misc:Depends},
  ${python:Depends}
+Suggests: python-pynsmp4
 Description: ceilometer python libraries
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all
