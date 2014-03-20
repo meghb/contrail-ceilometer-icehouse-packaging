@@ -88,7 +88,7 @@ Depends:
  python-wsme (>= 0.5b6),
  ${misc:Depends},
  ${python:Depends}
-Suggests: python-pynsmp4
+Suggests: python-pysnmp4
 Description: ceilometer python libraries
  Ceilometer aims to deliver a unique point of contact for billing systems to
  aquire all counters they need to establish  customer billing, accross all

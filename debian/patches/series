@@ -1,1 +1,2 @@
 default-dbconnection-sqlite.patch
+fix-requirements.patch
