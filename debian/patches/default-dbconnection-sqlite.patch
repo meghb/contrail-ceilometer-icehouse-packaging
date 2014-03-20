@@ -34,7 +34,7 @@ index 80964a7..7668dea 100644
  # Deprecated group/name - [DATABASE]/sql_connection
  # Deprecated group/name - [sql]/connection
 -#connection=sqlite:////ceilometer/openstack/common/db/$sqlite_db
-+connection=sqlite:sqlite:////var/lib/ceilometer/$sqlite_db
++connection=sqlite:////var/lib/ceilometer/$sqlite_db
 +
  
  # The SQLAlchemy connection string used to connect to the

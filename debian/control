@@ -210,7 +210,7 @@ Description: ceilometer notification agent
  .
  (A ceilometer is an instrument that measures cloud coverage.)
  .
- This package contains the notificaiton agent.
+ This package contains the notification agent.
 
 Package: ceilometer-alarm-evaluator
 Architecture: all

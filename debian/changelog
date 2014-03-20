@@ -1,8 +1,15 @@
-ceilometer (2014.1~b3-0ubuntu2) trusty; urgency=medium
+ceilometer (2014.1~b3-0ubuntu3) trusty; urgency=medium
 
-  * debian/patches/fix-requirements.patch: Explicity disable snmp. 
+  * debian/patches/fix-requirements.patch: Explicity disable snmp.
 
  -- Chuck Short <zulcss@ubuntu.com>  Thu, 20 Mar 2014 12:54:16 -0400
+
+ceilometer (2014.1~b3-0ubuntu2) trusty; urgency=medium
+
+  * d/p/default-dbconnection-sqlite.patch: Fix default sqlite connection URL.
+  * d/control: Fixup typo in notification agent description (LP: #1267127).
+
+ -- James Page <james.page@ubuntu.com>  Thu, 13 Mar 2014 16:51:52 +0000
 
 ceilometer (2014.1~b3-0ubuntu1) trusty; urgency=medium
 
