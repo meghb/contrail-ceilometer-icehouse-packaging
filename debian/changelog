@@ -1,4 +1,4 @@
-ceilometer (1:2014.1~rc1-0ubuntu1) trusty; urgency=medium
+ceilometer (2014.1~rc1-0ubuntu1) trusty; urgency=medium
 
   * New upstream release.
 
