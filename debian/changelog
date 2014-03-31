@@ -1,3 +1,9 @@
+ceilometer (1:2014.1~rc1-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Mon, 31 Mar 2014 11:50:09 -0400
+
 ceilometer (2014.1~b3-0ubuntu3) trusty; urgency=medium
 
   * debian/patches/fix-requirements.patch: Explicity disable snmp.
