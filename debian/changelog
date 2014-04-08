@@ -1,9 +1,13 @@
-ceilometer (2014.1~rc1-0ubuntu2) UNRELEASED; urgency=medium
+ceilometer (2014.1~rc2-0ubuntu1) trusty; urgency=medium
 
+  [ James Page ]
   * d/ceilometer-common.postinst: Only run db sync process if default sqlite
     connection is configured in /etc/ceilometer/ceilometer.conf (LP: #1182964).
 
- -- James Page <james.page@ubuntu.com>  Tue, 01 Apr 2014 17:23:52 +0100
+  [ Chuck Short ]
+  * New upstream release. (LP: #1299055)
+
+ -- Chuck Short <zulcss@ubuntu.com>  Tue, 08 Apr 2014 15:41:50 -0400
 
 ceilometer (2014.1~rc1-0ubuntu1) trusty; urgency=medium
 
