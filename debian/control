@@ -246,6 +246,4 @@ Description: Ceilometer notification agent
  .
  (A ceilometer is an instrument that measures cloud coverage.)
  .
- This package contains the arlarm notifier daemon.
-
-
+ This package contains the alarm notifier daemon.
