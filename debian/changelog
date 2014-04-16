@@ -1,3 +1,9 @@
+ceilometer (2014.1-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release (LP: #1299055).
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 16 Apr 2014 13:04:53 -0400
+
 ceilometer (2014.1~rc3-0ubuntu1) trusty; urgency=medium
 
   * New upstream release candidate (LP: #1299055).
