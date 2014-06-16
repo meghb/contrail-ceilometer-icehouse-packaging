@@ -1,3 +1,16 @@
+ceilometer (2014.1.1-0ubuntu1) trusty; urgency=medium
+
+  * Resynchronize with stable/icehouse (a1ec218) (LP: #1328134):
+    - [84635e6] Fix testing gate due to new keystoneclient release
+    - [c52904d] Fix network notifications of neutron bulk creation
+    - [06eb8bc] Sync kombu_reconnect_delay from Oslo
+    - [d247af3] Updated from global requirements
+    - [82eed26] Disable specifying alarm itself in combination rule
+    - [94c12fd] Adapt failing tests for latest wsme version
+    - [a1ec218] Use known protocol scheme in keystone tests
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Mon, 09 Jun 2014 14:49:20 -0400
+
 ceilometer (2014.1-0ubuntu1.1) trusty; urgency=medium
 
   * d/p/fix-requirements.patch: Drop required version of pecan to 0.3.0
