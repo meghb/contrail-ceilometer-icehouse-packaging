@@ -1,3 +1,17 @@
+ceilometer (2014.1.2-0ubuntu1) trusty; urgency=medium
+
+  * Resynchronize with stable/icehouse (2b6454f) (LP: #1354159):
+    - [e491837] Set python hash seed to 0 in tox.ini
+    - [99b7ef8] Update ensure()/reconnect() to catch MessagingError
+    - [af1eb64] Sync RPC module from oslo, fixing reconnect failures
+    - [47770db] Adds Content-Type to alarm REST notifier
+    - [4be8616] Remove low-value logging from publication codepath
+    - [096106f] Ensure routing key is specified in the address for a direct producer
+    - [2b6454f] remove token from notifier middleware
+  * d/p/fix-requirements.patch: Refresh.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 07 Aug 2014 21:57:17 -0400
+
 ceilometer (2014.1.1-0ubuntu1) trusty; urgency=medium
 
   * Resynchronize with stable/icehouse (a1ec218) (LP: #1328134):
