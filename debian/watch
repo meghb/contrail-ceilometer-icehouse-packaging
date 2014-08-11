@@ -1,3 +1,4 @@
 version=3
 opts="uversionmangle=s/\.([a-zA-Z])/~$1/;s/%7E/~/" \
- https://launchpad.net/ceilometer/+download https://launchpad.net/ceilometer/.*/.*/.*/ceilometer-(.*)\.tar\.gz
+ http://tarballs.openstack.org/ceilometer/ ceilometer-(.*)\.tar\.gz
+# https://launchpad.net/ceilometer/+download https://launchpad.net/ceilometer/.*/.*/.*/ceilometer-(.*)\.tar\.gz
