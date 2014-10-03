@@ -1,3 +1,15 @@
+ceilometer (2014.1.3-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Resynchronize with stable/icehouse (4e2c1cd) (LP: #1377136):
+    - [ccd6b98] VMware: Support secret host_password option
+    - [7ff220f] Fix tests with testtools>=0.9.39
+    - [014c41e] update default_log_levels set by ceilometer
+    - [0ba75c8] fix statistics query in postgres
+    - [4e2c1cd] fix StringIO errors in unit test
+  * d/p/fix-requirements.patch: Rebased.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 03 Oct 2014 10:22:03 -0400
+
 ceilometer (2014.1.2-0ubuntu1) trusty; urgency=medium
 
   [ Corey Bryant ]
