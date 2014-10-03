@@ -1,8 +1,6 @@
 Description: Disable pynsmp and set min version of pecan/six.
 Author: Corey Bryant <corey.bryant@canonical.com>
 Forwarded: Not needed.
-Index: ceilometer/requirements.txt
-===================================================================
 --- a/requirements.txt
 +++ b/requirements.txt
 @@ -16,8 +16,7 @@
@@ -22,5 +20,5 @@ Index: ceilometer/requirements.txt
 -six>=1.6.0
 +six>=1.5.2
  SQLAlchemy>=0.7.8,!=0.9.5,<=0.9.99
- sqlalchemy-migrate>=0.8.2,!=0.8.4
+ sqlalchemy-migrate>=0.8.2,!=0.8.4,!=0.9.2
  stevedore>=0.14
