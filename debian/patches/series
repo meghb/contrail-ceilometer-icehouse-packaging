@@ -1,2 +1,3 @@
 fix-requirements.patch
 default-dbconnection-sqlite.patch
+0001-OpenContrail-ceilometer-driver.patch
